@@ -689,6 +689,20 @@ main:focus {
   max-width: var(--measure);
 }
 
+/* stand-in for a photo of Deep that is still to come. Every slot must be
+   replaced before the branch is merged. */
+.photo-slot {
+  display: grid;
+  place-items: center;
+  min-height: 12rem;
+  padding: var(--space-5);
+  border: 2px dashed var(--color-accent);
+  border-radius: var(--radius-sm);
+  color: var(--color-accent);
+  font-size: var(--step--1);
+  text-align: center;
+}
+
 .evidence figure {
   margin: 0;
 }
