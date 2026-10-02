@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ORBIX · Deep Patel</title>
-  <meta name="description" content="ORBIX is an aerospace engineering web app I conceived, researched, and directed: 13 calculators, a mission planner, ten real vehicles, and a page that checks its results against published values.">
+  <meta name="description" content="How I planned and researched ORBIX, an aerospace engineering web app with 13 calculators and ten real vehicles, while AI coding assistants wrote the code.">
   <link rel="canonical" href="https://deeppatel4000-pixel.github.io/projects/orbix/">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Deep Patel">
   <meta property="og:title" content="ORBIX · Deep Patel">
-  <meta property="og:description" content="An aerospace engineering web app with 13 calculators, a mission planner, ten real vehicles, and results checked against published values.">
+  <meta property="og:description" content="An aerospace engineering web app whose calculators are checked against published worked examples.">
   <meta property="og:url" content="https://deeppatel4000-pixel.github.io/projects/orbix/">
   <meta property="og:image" content="https://deeppatel4000-pixel.github.io/assets/og/orbix.jpg">
   <meta name="twitter:card" content="summary_large_image">
@@ -42,9 +42,9 @@
         <p class="lede">
           ORBIX is an aerospace engineering web app built around real aircraft and launch
           vehicles. You can drag an orbit and watch the delta-v change, plan a mission burn by
-          burn, or put three aircraft side by side. Its results are checked against published
-          worked examples. The idea, the research, and every decision are mine. AI coding
-          assistants wrote the code under my direction.
+          burn, or put three aircraft side by side, and the results are checked against
+          published worked examples. The idea and the research are mine, and I made the design
+          decisions. AI coding assistants wrote the code under my direction.
         </p>
         <dl class="project-meta">
           <div>
@@ -90,12 +90,11 @@
           <figure class="figure figure--wide">
             <img
               src="../../assets/orbix/v4/orbix-home.webp"
-              alt="The ORBIX home page. On the left, the headline 'Aerospace engineering, explained with real vehicles.' with a byline saying the idea and research are Deep's and AI coding assistants wrote the code under his direction. On the right, the Transfer Explorer shows a transfer arc from a 200 km orbit to a 35,786 km target orbit, a total delta-v of 3,935 m/s, and a transfer time of 5 h 15 min."
+              alt="The ORBIX home page with the Transfer Explorer showing a transfer from a 200 km orbit to a 35,786 km orbit: 3,935 m/s total delta-v and a 5 h 15 min transfer."
               width="1800" height="1286" loading="lazy" decoding="async"
             >
             <figcaption>
-              The ORBIX home page. The Transfer Explorer is live, so the numbers on the right
-              change as you drag the orbit.
+              The home page with the Transfer Explorer set to a geosynchronous target.
             </figcaption>
           </figure>
         </div>
@@ -106,31 +105,27 @@
       <div class="wrap section__grid">
         <div class="section__rail">
           <h2 class="section__title" id="ox-role">How I built it</h2>
-          <p class="section__note">My part, and what the AI tools did.</p>
         </div>
         <div class="prose">
           <p>
-            ORBIX was my idea from the start. I chose which aircraft and launch vehicles to
-            include, which calculators and mission scenarios to build, and how the pieces
-            connect. I researched the vehicle specifications and the engineering behind every
-            tool, then wrote instructions with the exact equations, inputs, and units each part
-            needed. I also set the standards the site had to meet for design, accessibility,
-            and the legal side of running a public website, and I reviewed the results
-            against them.
+            ORBIX was my idea. I chose the aircraft and launch vehicles, decided which
+            calculators and mission scenarios to build, and worked out how the pieces connect.
+            For each tool I researched the engineering and the vehicle specifications, then
+            wrote instructions giving the exact equations, inputs, and units it needed. I also set
+            the standards the site had to meet for design, accessibility, and the legal side of
+            running a public website, and I reviewed the results against them.
           </p>
           <p>
-            I am an aspiring aerospace engineer, not a software engineer, so I used AI coding
-            assistants to write the software: Codex by OpenAI for the first version, then
-            Claude Code by Anthropic. Working from my instructions, they wrote the code, the
-            automated tests, and the page layouts. The full history is
+            I am not a software engineer, so AI coding assistants wrote the software: Codex by OpenAI for the first version, then Claude
+            Code by Anthropic. Working from my instructions, they wrote the code, the automated
+            tests, and the page layouts. The full history is
             <a href="https://github.com/deeppatel4000-pixel/orbix-aerospace" rel="noopener">public on GitHub</a>,
             and the commits made with Claude Code are marked as co-authored by it.
           </p>
           <p>
-            I built it this way on purpose. Engineers in every field are going to work
-            alongside these tools, and I wanted to learn to use them well: describe exactly
-            what I want, check what comes back, and refuse to accept something until it is
-            right.
+            Engineers in every field are going to work with these tools, and I wanted to learn
+            to use them well. For me that meant describing exactly what I wanted and checking
+            what came back until it was right.
           </p>
         </div>
       </div>
@@ -140,13 +135,12 @@
       <div class="wrap section__grid">
         <div class="section__rail">
           <h2 class="section__title" id="ox-lab">The Engineering Lab</h2>
-          <p class="section__note">13 calculators and a mission planner.</p>
         </div>
         <div>
           <div class="prose">
             <p>
-              Every tool in the lab shows its equation, its units, and its assumptions next to
-              the result. The calculators fall into three groups:
+              Each tool in the lab shows its equation, units, and assumptions next to the
+              result. The 13 calculators and the mission planner fall into three groups:
             </p>
           </div>
 
@@ -168,12 +162,12 @@
           <figure class="figure figure--wide">
             <img
               src="../../assets/orbix/v4/orbix-transfer-explorer.webp"
-              alt="The Hohmann transfer tool set to geosynchronous orbit with a craft partway along the transfer arc. Burn 1 is 2,457 m/s and burn 2 is 1,478 m/s, for a total of 3,935 m/s. Three sentences explain each step, and a craft position readout shows time since burn 1, altitude, and speed."
+              alt="The Hohmann transfer tool set to geosynchronous orbit: burn 1 of 2,457 m/s and burn 2 of 1,478 m/s, 3,935 m/s total."
               width="1800" height="1264" loading="lazy" decoding="async"
             >
             <figcaption>
-              The Hohmann tool during playback. The craft follows the transfer using Kepler
-              timing, and the readout shows its altitude and speed at that moment.
+              Playback, with the craft partway along the arc. It moves on Kepler timing, and
+              the readout gives the time since burn 1 and its altitude and speed at that moment.
             </figcaption>
           </figure>
 
@@ -190,12 +184,12 @@
           <figure class="figure">
             <img
               src="../../assets/orbix/v4/orbix-mission-planner.webp"
-              alt="The ORBIX mission planner for a LEO satellite deployment: burn 1 of 100.4 m/s, a 46 minute coast, and burn 2 of 99.1 m/s, totaling 199.5 m/s, with an orbit diagram. Below, a bar chart compares LEO deployment, ISS-style resupply, a lunar transfer concept at 4,049 m/s, and a Mars transfer concept marked as preset allowances, not computed."
+              alt="The mission planner for a LEO satellite deployment: burns of 100.4 and 99.1 m/s around a 46 minute coast, 199.5 m/s total, above a bar chart of four presets."
               width="1640" height="1630" loading="lazy" decoding="async"
             >
             <figcaption>
-              The mission planner. The Mars row is labeled as preset allowances because ORBIX
-              does not compute that mission.
+              The chart also shows ISS-style resupply and a Mars transfer concept. The Mars row
+              is labeled as preset allowances because ORBIX does not compute that mission.
             </figcaption>
           </figure>
         </div>
@@ -213,8 +207,8 @@
             <p>
               To check the calculators, ORBIX has a Verification page. It runs selected lab functions with the inputs from
               published tables and worked examples, then prints each result beside the
-              published value. The ORBIX numbers come from the same functions the lab uses.
-              Nobody types them in.
+              published value. The ORBIX numbers come from the same functions the lab uses, so
+              none of them are typed in by hand.
             </p>
             <p>
               The sources are Robert A. Braeunig's example problems, Brennen's Internet Book on
@@ -229,12 +223,12 @@
           <figure class="figure figure--wide">
             <img
               src="../../assets/orbix/v4/orbix-verification.webp"
-              alt="The ORBIX verification table for a Hohmann transfer from low Earth orbit to geosynchronous orbit. ORBIX gives 2,454.59, 1,477.27, and 3,931.86 m/s against published values of 2,455, 1,478, and 3,933 m/s, with differences under 0.05 percent and a note explaining the rounding."
+              alt="Verification table for a Hohmann transfer from low Earth orbit to geosynchronous orbit: burns of 2,454.59 and 1,477.27 m/s against published 2,455 and 1,478 m/s, 3,931.86 m/s total against 3,933."
               width="1680" height="1240" loading="lazy" decoding="async"
             >
             <figcaption>
-              One of the 14 verification tables. Two rows are marked "outside rounding," and
-              the note under the table explains why.
+              One of the 14 verification tables. Every difference is under 0.05 percent, yet
+              two rows are marked "outside rounding," and the note under the table explains why.
             </figcaption>
           </figure>
         </div>
@@ -245,7 +239,6 @@
       <div class="wrap section__grid">
         <div class="section__rail">
           <h2 class="section__title" id="ox-vehicles">Real vehicles</h2>
-          <p class="section__note">Five aircraft and five launch vehicles.</p>
         </div>
         <div>
           <div class="prose">
@@ -257,7 +250,7 @@
             </p>
             <p>
               Public sources often disagree, so ORBIX shows values in the units the source
-              used and never converts them quietly. A missing value reads "Not published"
+              used and never converts them silently. A missing value reads "Not published"
               instead of zero, and the compare page gives no ranking and no winner. The scale
               drawings are outlines traced from public-domain government drawings and sized to
               each vehicle's recorded height or length.
@@ -267,23 +260,23 @@
           <figure class="figure figure--wide">
             <img
               src="../../assets/orbix/v4/orbix-rocket-heights.webp"
-              alt="Outline drawings of Falcon 9 at 70 m, Falcon Heavy, the Space Launch System at 98.3 m, Saturn V at about 111 m, and Starship at 124.4 m, all drawn to one scale with a 50 m scale bar."
+              alt="Outlines of Falcon 9, Falcon Heavy, SLS, Saturn V, and Starship at one scale, from Falcon 9 at 70 m to Starship at 124.4 m."
               width="1800" height="1152" loading="lazy" decoding="async"
             >
             <figcaption>
-              Five launch vehicles drawn to one scale, each traced from a published drawing.
+              SLS stands 98.3 m and Saturn V about 111 m. The scale bar marks 50 m.
             </figcaption>
           </figure>
 
           <figure class="figure figure--wide">
             <img
               src="../../assets/orbix/v4/orbix-compare.webp"
-              alt="The ORBIX spec sheet comparing the SR-71 Blackbird, F-22 Raptor, and B-2 Spirit, with traced plan-view outlines at one scale, the rules for the comparison, and the first rows of heritage data: manufacturer and first flight date."
+              alt="The ORBIX compare page with the SR-71 Blackbird, F-22 Raptor, and B-2 Spirit, their plan-view outlines traced at one scale."
               width="1800" height="1248" loading="lazy" decoding="async"
             >
             <figcaption>
-              The compare page, preloaded with the SR-71, F-22, and B-2. The rules on the left
-              come before the data.
+              The page comes preloaded with these three. Its comparison rules sit on the left,
+              ahead of the heritage data, which starts with manufacturer and first flight date.
             </figcaption>
           </figure>
         </div>
@@ -314,11 +307,12 @@
           <figure class="figure">
             <img
               src="../../assets/orbix/v4/orbix-architecture.webp"
-              alt="A diagram of the four code layers in ORBIX: Data, then Calculators, then Analyses, and below a presentation boundary, React. Arrows show which layer imports from which."
+              alt="Diagram of the four code layers in ORBIX: Data, Calculators, and Analyses, with React below a presentation boundary."
               width="1440" height="1380" loading="lazy" decoding="async"
             >
             <figcaption>
-              The four layers, from the build log on the ORBIX site.
+              From the build log on the ORBIX site. The arrows show which layer imports from
+              which.
             </figcaption>
           </figure>
         </div>
@@ -333,21 +327,20 @@
         <div>
           <div class="prose">
             <p>
-              Building ORBIX taught me the basics of every aircraft and launch vehicle in it:
+              Building ORBIX taught me the basics of each aircraft and launch vehicle in it:
               what each one was designed to do and how its design serves that purpose.
             </p>
             <p>
-              The bigger lesson came from the Engineering Lab. Before any tool could be built, I
-              had to research how it works: which equation it uses, what goes into it, and what
-              the result means. Across every tool in the lab, that meant learning how lift,
-              drag, thrust, gravity, shock waves, and heating actually behave, and working out
-              a way for each one to be calculated.
+              I learned more from the Engineering Lab. Before any tool could be built, I had to
+              research which equation it uses, what goes into it, and what the result means.
+              Across the lab, that meant learning how lift, drag, thrust, gravity, shock waves,
+              and heating behave, and working out how each one could be calculated. Using the
+              finished tools, I learned what it is like to change one input, rerun the
+              calculation, and see how an orbital transfer or a shock wave responds.
             </p>
             <p>
-              I also learned what it is like to run simulations: change one input, run it
-              again, and see how an orbital transfer or a shock wave responds. And I got real
-              experience with how software gets made, from planning features to testing and
-              fixing mistakes.
+              Taking ORBIX from planned features through testing and fixing mistakes gave me
+              real experience with how software gets made.
             </p>
           </div>
 

@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projects · Deep Patel</title>
-  <meta name="description" content="ORBIX, an aerospace web application, and a bell nozzle designed in OpenSCAD, simulated in OpenFOAM, and printed in PLA.">
+  <meta name="description" content="Case studies for ORBIX, an aerospace engineering web app, and a PLA bell nozzle whose OpenFOAM simulation never converged.">
   <link rel="canonical" href="https://deeppatel4000-pixel.github.io/projects/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Deep Patel">
   <meta property="og:title" content="Projects · Deep Patel">
-  <meta property="og:description" content="An aerospace web application, and a bell nozzle taken from geometry to a printed part.">
+  <meta property="og:description" content="Deep Patel's two projects: the ORBIX aerospace web app and a bell nozzle taken from OpenSCAD geometry to a printed part.">
   <meta property="og:url" content="https://deeppatel4000-pixel.github.io/projects/">
   <meta property="og:image" content="https://deeppatel4000-pixel.github.io/assets/og/projects.jpg">
   <meta name="twitter:card" content="summary_large_image">
@@ -39,10 +39,10 @@
       <div class="wrap">
         <h1 class="project-header__title">Projects</h1>
         <p class="lede">
-          These are the two projects I have taken the furthest. ORBIX is an aerospace
-          engineering web app that I conceived, researched, and directed. The bell nozzle
-          started as a propulsion design and took me through CAD, CFD, debugging, and
-          fabrication. Each case study shows the work behind it, including what went wrong.
+          I've gone further with these two projects than with anything else. ORBIX is an
+          aerospace engineering web app I came up with, researched, and directed. The bell
+          nozzle began as a propulsion design and ended up taking me through CAD, CFD, a lot
+          of debugging, and fabrication. Its case study covers what went wrong.
         </p>
       </div>
     </div>
@@ -58,11 +58,11 @@
               <p class="feature__kind">Software · Aerospace web application · 2026</p>
               <h3 class="feature__title" id="p-orbix">ORBIX</h3>
               <p class="feature__summary">
-                Thirteen engineering calculators, a mission planner, and profiles of five
-                aircraft and five launch vehicles. A Verification page checks the results
-                against published worked examples, and 26 of 36 compared values fall within
-                rounding. The idea and research are mine, and AI coding assistants wrote the
-                code under my direction.
+                The site pairs 13 calculators and a mission planner with profiles of ten real
+                vehicles, five aircraft and five launch vehicles. Its answers are checked
+                against published worked examples on a Verification page, where 26 of 36 values
+                match to within rounding. ORBIX was my idea and my research. AI coding assistants,
+                Codex and then Claude Code, wrote the code under my direction.
               </p>
               <p class="feature__tools">Next.js · React · TypeScript · Vitest · Playwright · Codex · Claude Code</p>
               <p class="feature__links">
@@ -77,12 +77,11 @@
           <div class="wrap">
             <img
               src="../assets/orbix/v4/orbix-transfer-explorer.webp"
-              alt="The ORBIX Hohmann transfer tool set to geosynchronous orbit with a craft partway along the transfer arc, showing burns of 2,457 and 1,478 m/s and a total of 3,935 m/s, with a sentence explaining each step."
+              alt="The ORBIX Hohmann transfer tool set to geosynchronous orbit, with a craft partway along the transfer arc, burns of 2,457 and 1,478 m/s, a total of 3,935 m/s, and a sentence explaining each step."
               width="1800" height="1264" loading="lazy" decoding="async"
             >
             <figcaption>
-              The Hohmann transfer tool in the Engineering Lab, partway through playing the
-              coast to geosynchronous orbit.
+              From the Engineering Lab, captured while the tool plays back the coast.
             </figcaption>
           </div>
         </figure>
@@ -95,10 +94,9 @@
             <p class="feature__kind">Engineering · Self-directed propulsion project · April 2026</p>
             <h3 class="feature__title" id="p-nozzle">Bell Nozzle</h3>
             <p class="feature__summary">
-              A bell nozzle drawn in OpenSCAD from a six-point profile, meshed and run through
-              SimFlow and OpenFOAM, and printed in PLA. The simulation never converged, so most
-              of the project became working out why. The case study shows that result as it
-              happened.
+              I drew this nozzle in OpenSCAD from a six-point profile, meshed it, ran it in
+              SimFlow and OpenFOAM, and printed it in PLA. The CFD never reached a converged
+              solution, and trying to track down the cause became the bulk of the work.
             </p>
             <p class="feature__tools">OpenSCAD · SimFlow · OpenFOAM · ParaView · Cura · PLA printing</p>
             <p class="feature__links">
@@ -113,25 +111,11 @@
               width="1122" height="1402" loading="lazy" decoding="async"
             >
             <figcaption>
-              The finished PLA prototype, 84.48 mm tall.
+              The printed part stands 84.48 mm tall.
             </figcaption>
           </figure>
         </div>
       </article>
-    </section>
-
-    <section class="section" aria-labelledby="p-next">
-      <div class="wrap section__grid">
-        <div class="section__rail">
-          <h2 class="section__title" id="p-next">What comes next</h2>
-        </div>
-        <div class="prose">
-          <p>
-            I plan to keep adding vehicles, engineering tools, and mission features to ORBIX
-            as I learn more. Anything I build next will go here alongside these two.
-          </p>
-        </div>
-      </div>
     </section>
 
     <nav class="wrap project-nav" aria-label="Site">
