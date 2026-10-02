@@ -7,9 +7,14 @@
   <meta name="description" content="Designing a bell nozzle in OpenSCAD, trying to simulate it in SimFlow and OpenFOAM, and printing it in PLA, including everything that did not work.">
   <link rel="canonical" href="https://deeppatel4000-pixel.github.io/projects/bell-nozzle/">
   <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Deep Patel">
   <meta property="og:title" content="Bell Nozzle · Deep Patel">
   <meta property="og:description" content="Drawing, simulating, and printing a bell nozzle, including everything that did not work.">
+  <meta property="og:url" content="https://deeppatel4000-pixel.github.io/projects/bell-nozzle/">
+  <meta property="og:image" content="https://deeppatel4000-pixel.github.io/assets/og/bell-nozzle.jpg">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
   <link rel="stylesheet" href="../../styles.css">
 </head>
 <body>
@@ -21,8 +26,9 @@
       <nav class="site-nav" aria-label="Primary">
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/projects/" aria-current="page">Projects</a></li>
+          <li><a href="/projects/" aria-current="true">Projects</a></li>
           <li><a href="/experience/">Experience</a></li>
+          <li><a href="/assets/deep-patel-resume.pdf">Resume</a></li>
         </ul>
       </nav>
     </div>
@@ -41,7 +47,7 @@
         <dl class="project-meta">
           <div>
             <dt>Type</dt>
-            <dd>Personal project</dd>
+            <dd>Self-directed propulsion project</dd>
           </div>
           <div>
             <dt>Date</dt>
@@ -83,8 +89,8 @@
             <p>
               A bell nozzle has a converging section, a throat where the flow goes sonic, and a
               diverging section where the gas keeps speeding up. That last part is the one that
-              confused me at first. Below the throat, a narrowing passage speeds gas up. Above
-              it, only a widening one does.
+              confused me at first. While the flow is slower than sound, a narrowing passage
+              speeds it up. Once it passes Mach 1 at the throat, only a widening passage does.
             </p>
             <p>
               The relation that matters after that is the one between area ratio and exit Mach
@@ -92,8 +98,8 @@
               the exit, and it tells you how much bigger the exit has to be than the throat.
               I worked my sizing around a LOX/RP-1 case: an oxidizer to fuel ratio of 2.56, a
               100 bar chamber at about 3615 K, expanding to 0.7 bar at roughly 3 km altitude,
-              with a ratio of specific heats of 1.2 and a molecular weight of 22.65 g/mol. My
-              target was an exit Mach number of 3.5.
+              with a ratio of specific heats of 1.2 and a molecular weight of 22.65 g/mol. I
+              started with a rough target of Mach 3.5 at the exit.
             </p>
           </div>
         </div>
@@ -184,18 +190,17 @@
 
           <div class="prose prose--after-spec">
             <p>
-              Checking the shape I actually built against the theory is the one calculation
-              here I would defend. The exit radius divided by the throat radius is 3.99, so the
-              geometric area ratio is 15.92. For a ratio of specific heats of 1.2, an area
-              ratio of 15.92 corresponds to roughly Mach 3.6 in the ideal isentropic area to
-              Mach relation. That is slightly above the Mach 3.5 target I started with, which
-              makes sense because I placed the contour points by eye instead of solving for
-              them.
+              Afterward I checked the shape I actually built against the theory. The exit
+              radius divided by the throat radius is 3.99, so the geometric area ratio is 15.92.
+              For a ratio of specific heats of 1.2, that area ratio corresponds to about Mach
+              3.6 in the ideal isentropic relation. Working the expansion from 100 bar down to
+              0.7 bar gives about Mach 3.59 and an area ratio near 15.6. So the nozzle I drew by
+              hand ended up matching the 0.7 bar exit pressure closely, a little past my
+              original Mach 3.5 estimate.
             </p>
             <p>
-              To be clear about what that is and is not: it is a comparison between my geometry
-              and textbook theory. It is not a simulation result, it is not a measurement, and
-              it says nothing about what the printed part would actually do.
+              This compares my geometry with textbook theory. It is not a simulation result or
+              a measurement, and it does not tell me how the printed part would perform.
             </p>
           </div>
         </div>
@@ -210,9 +215,9 @@
         <div>
           <div class="prose">
             <p>
-              A solver does not want the nozzle. It wants the gas inside it. So I made a second
-              OpenSCAD model of just the internal flow path, with no walls, and exported that
-              as the geometry to simulate.
+              For CFD, the solver needs the gas inside the nozzle, not the walls around it. So
+              I made a second OpenSCAD model of just the internal flow path and exported that as
+              the geometry to simulate.
             </p>
             <p>
               That went into SimFlow, which is the interface I used to set up and run the case.
@@ -253,13 +258,24 @@
           <div class="prose prose--after-spec">
             <p>
               The mesh is the weak point, and I can see that more clearly now than I could
-              then. It is a uniform box wrapped around the nozzle rather than a mesh built
-              around the nozzle. The cells are the same size at the throat as they are out in
-              the corner of the domain, where nothing happens. The 0.7 bar exit target comes
-              from my sizing notes. The 100 bar inlet I can still read straight off the case
-              setup.
+              then. It is a uniform box wrapped around the nozzle, so the cells are the same
+              size at the throat as they are out in the corner of the domain, where nothing
+              happens. The 0.7 bar exit target comes from my sizing notes. The 100 bar inlet I
+              can still read straight off the case setup.
             </p>
           </div>
+
+          <figure class="figure">
+            <img
+              src="../../assets/nozzle/simflow-hex-mesh.webp"
+              alt="SimFlow free version showing the hex mesh as a uniform green block of identical cells, with the solver log below it."
+              width="1841" height="947" loading="lazy" decoding="async"
+            >
+            <figcaption>
+              The 40 × 40 × 60 hex mesh in SimFlow. Every cell is the same size, including
+              the ones far from the nozzle.
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -284,9 +300,9 @@
               through the pressure and temperature settings, then the boundary conditions, then
               the mesh again. Every change gave me another test case, and I ran a lot of them
               across one evening and the next afternoon. Eventually I added a temperature
-              limiter to stop the solver
-              aborting outright, which kept the case alive much longer. A limiter is a way of
-              surviving the symptom, though, not a fix for whatever was causing it.
+              limiter to stop the solver aborting outright, which kept the case alive much
+              longer. The limiter only hid the symptom. Whatever was causing it was still
+              there.
             </p>
           </div>
 
@@ -337,8 +353,7 @@
           <h3 class="subhead">What the results actually showed</h3>
           <div class="prose">
             <p>
-              I want to be exact here, because it would be easy to imply more than I have. The
-              simulation did not produce a valid flow solution. No velocity, Mach, or pressure
+              The simulation did not produce a valid flow solution. No velocity, Mach, or pressure
               field was ever written to disk. When I open the case in ParaView the only time
               step available is zero, which is the mesh before anything was solved. I did not
               numerically confirm choking at the throat, I did not confirm supersonic
@@ -347,16 +362,32 @@
             </p>
             <p>
               In the final run the solver reported a continuity error of order
-              10<sup>49</sup> and pressures of order 10<sup>95</sup>, both positive and
-              negative. Those are not small errors. They are the numbers a case produces on its
-              way to falling apart. The residual plot from that run shows velocity and enthalpy
-              flattening out around 10<sup>-2</sup> while the pressure residual sits at 1,
-              which is a case that is not converging rather than one that is nearly there.
+              10<sup>49</sup>, a maximum pressure of about 10<sup>101</sup>, and a minimum
+              pressure of about minus 10<sup>99</sup>. Physically meaningless numbers like these
+              mean the case was falling apart. In the residual plot from that run, the three
+              velocity residuals level off between 10<sup>-2</sup> and 10<sup>-1</sup>, while
+              the enthalpy residual stays pinned at 1. A converging case would show all of them
+              dropping together.
             </p>
+          </div>
+
+          <figure class="figure figure--wide">
+            <img
+              src="../../assets/nozzle/cfd-residuals-run24.webp"
+              alt="SimFlow residual plot for iterations 1 to 24. The Ux, Uy, and Uz residuals drop at first and then wander between about 0.01 and 0.05, while the enthalpy residual stays at 1. The solver log below shows pressure max 1.320625e+101 and pressure min -3.208335e+99."
+              width="1840" height="945" loading="lazy" decoding="async"
+            >
+            <figcaption>
+              Residuals from the run that reached iteration 24. The log under the plot shows
+              the pressure values that told me the case had diverged.
+            </figcaption>
+          </figure>
+
+          <div class="prose prose--after-spec">
             <p>
-              So the CFD here is a record of a setup and a failure, not a validation of the
-              design. The geometry check earlier on this page is the only quantitative result I
-              would stand behind.
+              So the CFD here records a setup and a failure. It does not validate the design,
+              and the geometry check earlier on this page is the only number I can stand
+              behind.
             </p>
           </div>
         </div>
@@ -451,8 +482,8 @@
             flow can establish before I ask a steady-state solver for an answer.
           </p>
           <p>
-            Then the test of whether any of that worked is simple. Produce a Mach field and
-            look at it. I would not call the nozzle simulated until I can.
+            The test of whether any of that worked is simple: produce a Mach field and look
+            at it. Until I can do that, I would not call the nozzle simulated.
           </p>
         </div>
       </div>
@@ -473,8 +504,8 @@
           </p>
           <p>
             I also learned how sensitive CFD is to the mesh, the conditions, and the way the
-            case is set up. Small changes there decided whether the run lasted one iteration or
-            twenty. And I learned to check my own geometry against the theory instead of
+            case is set up. Small changes there decided whether a run lasted one iteration or
+            twenty-four. And I learned to check my own geometry against the theory instead of
             assuming I drew what I meant to draw.
           </p>
         </div>
@@ -490,7 +521,11 @@
   <footer class="site-footer">
     <div class="wrap site-footer__inner">
       <p>Deep Patel · Chelmsford, Massachusetts</p>
-      <p><a href="mailto:deep.patel4000@gmail.com">deep.patel4000@gmail.com</a></p>
+      <p>
+        <a href="mailto:deep.patel4000@gmail.com">deep.patel4000@gmail.com</a>
+        <span aria-hidden="true">·</span>
+        <a href="../../assets/deep-patel-resume.pdf">Resume (PDF)</a>
+      </p>
     </div>
   </footer>
 </body>

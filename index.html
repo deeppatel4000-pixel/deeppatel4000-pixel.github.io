@@ -3,14 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Deep Patel · Aerospace and software work</title>
-  <meta name="description" content="Deep Patel, a high school senior in Chelmsford, Massachusetts, working on rocket propulsion design, CFD, CAD, and software.">
+  <title>Deep Patel · Aerospace projects and service</title>
+  <meta name="description" content="Deep Patel, a high school senior in Chelmsford, Massachusetts, planning to study aerospace engineering. ORBIX, a bell nozzle CFD project, and years of youth leadership and service with BAPS.">
   <link rel="canonical" href="https://deeppatel4000-pixel.github.io/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Deep Patel · Aerospace and software work">
-  <meta property="og:description" content="Propulsion design, CFD, CAD, and software, by a high school senior in Chelmsford, Massachusetts.">
+  <meta property="og:site_name" content="Deep Patel">
+  <meta property="og:title" content="Deep Patel · Aerospace projects and service">
+  <meta property="og:description" content="ORBIX, a bell nozzle CFD project, and youth leadership and service with BAPS, from a high school senior planning to study aerospace engineering.">
   <meta property="og:url" content="https://deeppatel4000-pixel.github.io/">
+  <meta property="og:image" content="https://deeppatel4000-pixel.github.io/assets/og/home.jpg">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -24,6 +28,7 @@
           <li><a href="/" aria-current="page">Home</a></li>
           <li><a href="/projects/">Projects</a></li>
           <li><a href="/experience/">Experience</a></li>
+          <li><a href="/assets/deep-patel-resume.pdf">Resume</a></li>
         </ul>
       </nav>
     </div>
@@ -35,20 +40,22 @@
         <h1 class="hero__name" id="hero-name">Deep Patel</h1>
         <div class="hero__body">
           <p>
-            I work on propulsion projects and build software. In spring 2026 I drew a bell
-            nozzle, meshed it, and spent hours testing the solver while it kept falling over.
-            The best run got to iteration 24. Later in 2026 I designed and built
-            <strong>ORBIX</strong>, an aerospace web app with vehicle comparisons, engineering
-            tools, and mission simulations.
+            I'm a senior at Chelmsford High School, and I plan to study aerospace engineering.
+            This site holds the two projects I have taken the furthest and the service work
+            that has filled most of my weeks since middle school.
           </p>
           <p>
-            Propulsion, CFD, and CAD are where a number on paper turns into geometry you can
-            print, mesh, and be wrong about.
+            <strong>ORBIX</strong> is an aerospace engineering web app I conceived, researched,
+            and directed. For the <strong>Bell Nozzle</strong>, I drew a rocket nozzle, meshed
+            it, ran it through OpenFOAM, and printed it. At <strong>BAPS</strong> I lead weekly
+            assemblies for more than 70 children, and in 2023 I spent four months fabricating
+            architectural parts on CNC machines at Akshardham in New Jersey.
           </p>
         </div>
         <p class="hero__context">
-          Chelmsford High School <span aria-hidden="true">·</span> Senior
-          <span aria-hidden="true">·</span> Class of 2027 <span aria-hidden="true">·</span> GPA 4.1
+          Chelmsford High School <span aria-hidden="true">·</span> Class of 2027
+          <span aria-hidden="true">·</span> GPA 4.1 <span aria-hidden="true">·</span>
+          <a href="assets/deep-patel-resume.pdf">Resume (PDF)</a>
         </p>
       </div>
     </section>
@@ -61,12 +68,14 @@
           <div class="feature__head">
             <p class="feature__index" aria-hidden="true">01</p>
             <div class="feature__intro">
-              <p class="feature__kind">Software · Aerospace web application · 2026</p>
+              <p class="feature__kind">Software · Aerospace engineering web app · 2026</p>
               <h3 class="feature__title" id="orbix-title">ORBIX</h3>
               <p class="feature__summary">
-                An aerospace web application I designed and built. It connects real aircraft
-                and launch vehicles to the engineering behind them, and every number keeps its
-                units, its qualifier and its source.
+                Thirteen engineering calculators, a mission planner, and five aircraft and five
+                launch vehicles. Drag an orbit and the delta-v updates as you move it. A
+                Verification page checks results against published worked examples. The idea,
+                research, and decisions are mine, and AI coding assistants wrote the code under
+                my direction.
               </p>
               <p class="feature__links">
                 <a class="link-arrow" href="projects/orbix/">Read the ORBIX case study</a>
@@ -79,13 +88,13 @@
         <figure class="feature__figure">
           <div class="wrap">
             <img
-              src="assets/orbix/orbix-launch-registry.webp"
-              alt="The ORBIX launch vehicle registry: Falcon 9, Falcon Heavy, and Saturn V shown as cards with photographs, orbit classes, liftoff thrust, and stage counts."
-              width="1585" height="1090" fetchpriority="high" decoding="async"
+              src="assets/orbix/v4/orbix-home.webp"
+              alt="The ORBIX home page. On the left, the headline 'Aerospace engineering, explained with real vehicles.' On the right, the Transfer Explorer shows a transfer from a 200 km orbit to a 35,786 km orbit with a total delta-v of 3,935 m/s and a transfer time of 5 h 15 min."
+              width="1800" height="1286" fetchpriority="high" decoding="async"
             >
             <figcaption>
-              The launch vehicle registry. Each card carries the vehicle's orbit classes,
-              liftoff thrust, and stage count, and opens into a full engineering profile.
+              The ORBIX home page. The Transfer Explorer on the right recomputes both burns of a
+              Hohmann transfer as you drag the target orbit.
             </figcaption>
           </div>
         </figure>
@@ -100,13 +109,12 @@
             <p class="feature__summary">
               I wanted to know how bell nozzles actually work, so I tried to design one. I drew
               the profile in OpenSCAD, ran the flow volume through SimFlow and OpenFOAM, and
-              printed the part in PLA. The simulation never converged, so most of the project
-              turned into figuring out why.
+              printed the part in PLA. The simulation never converged. The best run reached
+              iteration 24, so most of the project turned into figuring out why.
             </p>
 
             <p class="feature__links">
               <a class="link-arrow" href="projects/bell-nozzle/">Read the Bell Nozzle case study</a>
-              <a class="link-arrow" href="projects/">All projects</a>
             </p>
           </div>
 
@@ -123,9 +131,43 @@
           </figure>
         </div>
       </article>
+
+      <article class="feature" aria-labelledby="service-title">
+        <div class="wrap feature__split">
+          <div class="feature__panel">
+            <p class="feature__index" aria-hidden="true">03</p>
+            <p class="feature__kind">Leadership and service · BAPS · 2017 to present</p>
+            <h3 class="feature__title" id="service-title">Service and Leadership</h3>
+            <p class="feature__summary">
+              As Youth Activities Coordinator for BAPS Bal Mandal in Lowell, I run weekly
+              assemblies for more than 70 children with a team of 15 peer teachers. I help lead
+              the Bal Balika Summer Shibir, a three-day camp with more than 1,000 participants,
+              and the Kids Diwali Celebration. From July to October 2023 I worked full time at
+              BAPS Akshardham in Robbinsville, New Jersey, drawing architectural parts and
+              cutting them on industrial CNC and hot-wire machines. I have volunteered with BAPS
+              Charities since 2017.
+            </p>
+
+            <p class="feature__links">
+              <a class="link-arrow" href="experience/">See the full experience</a>
+            </p>
+          </div>
+
+          <figure class="feature__aside">
+            <img
+              src="assets/bal-mandal/weekly-assembly-teaching.webp"
+              alt="Standing and teaching from a book to a group of children sitting on the floor with their own books open during a weekly Bal Mandal assembly."
+              width="1600" height="1200" loading="lazy" decoding="async"
+            >
+            <figcaption>
+              Teaching a lesson at a weekly Bal Mandal assembly.
+            </figcaption>
+          </figure>
+        </div>
+      </article>
     </section>
 
-    <section class="section" id="about" aria-labelledby="about-title">
+    <section class="section section--tinted" id="about" aria-labelledby="about-title">
       <div class="wrap section__grid">
         <div class="section__rail">
           <h2 class="section__title" id="about-title">About</h2>
@@ -136,16 +178,17 @@
             <p>
               My projects move between calculation, software, CAD, simulation, and fabrication.
               On the Bell Nozzle that meant sizing the geometry, setting up the CFD case, and
-              working out how to print the part. ORBIX took the software side much further,
-              with vehicle data, engineering calculations, mission tools, and automated tests
-              across the app.
+              working out how to print the part. ORBIX took the research side much further,
+              into vehicle data, engineering calculations, and mission planning. At school I
+              compete in the high jump and hurdles, serve as vice president of the AI Club, and
+              was inducted into the National Honor Society in March 2026.
             </p>
           </div>
 
           <dl class="inline-facts">
             <div>
               <dt>Coursework</dt>
-              <dd>AP Physics, AP Physics C, AP Computer Science, Calculus, Advanced Engineering Principles and 3D Design</dd>
+              <dd>AP Physics C, AP Computer Science, Calculus, Advanced Engineering Principles and 3D Design</dd>
             </div>
             <div>
               <dt>Recognition</dt>
@@ -153,36 +196,9 @@
             </div>
             <div>
               <dt>Selected tools</dt>
-              <dd>TypeScript, React, Next.js, Java, OpenSCAD, SimFlow, OpenFOAM, Fusion 360, CorelDRAW and Illustrator for CNC</dd>
+              <dd>Java, OpenSCAD, Fusion 360, Onshape, SimFlow, OpenFOAM, ParaView, CorelDRAW and Illustrator for CNC, AI coding assistants</dd>
             </div>
           </dl>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--tinted" id="experience" aria-labelledby="experience-title">
-      <div class="wrap section__grid">
-        <div class="section__rail">
-          <h2 class="section__title" id="experience-title">Things I have done</h2>
-        </div>
-        <div>
-          <div class="prose">
-            <p>
-              Outside class I run weekly Bal Mandal assemblies for more than 70 children and
-              help lead two annual programs, the Bal Balika Summer Shibir and the Kids Diwali
-              Celebration. From July to October 2023 I did full-time digital fabrication at
-              BAPS Akshardham, drawing architectural components and then running the CNC and
-              hot-wire machines that cut them.
-            </p>
-            <p>
-              Before that I worked in technical operations and in fulfillment, and at school I
-              do high jump and hurdles, robotics, and the AI club.
-            </p>
-          </div>
-
-          <p class="feature__links">
-            <a class="link-arrow" href="experience/">See the full experience</a>
-          </p>
         </div>
       </div>
     </section>
@@ -198,6 +214,7 @@
         </div>
         <div class="contact__links">
           <a href="mailto:deep.patel4000@gmail.com">deep.patel4000@gmail.com</a>
+          <a href="assets/deep-patel-resume.pdf">Resume (PDF)</a>
           <a href="https://www.linkedin.com/in/deep-patel-91ab41378/" rel="noopener">LinkedIn profile</a>
         </div>
       </div>
@@ -207,10 +224,12 @@
   <footer class="site-footer">
     <div class="wrap site-footer__inner">
       <p>Deep Patel · Chelmsford, Massachusetts</p>
-      <p><a href="mailto:deep.patel4000@gmail.com">deep.patel4000@gmail.com</a></p>
+      <p>
+        <a href="mailto:deep.patel4000@gmail.com">deep.patel4000@gmail.com</a>
+        <span aria-hidden="true">·</span>
+        <a href="assets/deep-patel-resume.pdf">Resume (PDF)</a>
+      </p>
     </div>
   </footer>
-
-  <script src="script.js" defer></script>
 </body>
 </html>

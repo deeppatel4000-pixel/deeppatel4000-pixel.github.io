@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Deep Patel — portfolio
+   Deep Patel portfolio
    Design foundation: editorial, light, type-led. No framework.
    ========================================================================== */
 
@@ -132,6 +132,10 @@ a {
 
 a:hover {
   color: var(--color-accent-hover);
+}
+
+main:focus {
+  outline: none;
 }
 
 :focus-visible {
@@ -657,6 +661,17 @@ a:hover {
   max-width: var(--measure);
 }
 
+.group__role--next {
+  margin-top: var(--space-7);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-border);
+}
+
+.group__detail + .group__also,
+.evidence + .group__also {
+  margin-top: var(--space-6);
+}
+
 .group__also {
   font-size: var(--step--1);
   color: var(--color-muted);
@@ -971,6 +986,7 @@ a:hover {
   border-top: 0;
 }
 
+.subhead + .group__detail,
 .subhead + .prose,
 .subhead + .spec,
 .subhead + .runs {

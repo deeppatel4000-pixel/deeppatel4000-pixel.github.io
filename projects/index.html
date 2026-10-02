@@ -7,9 +7,14 @@
   <meta name="description" content="ORBIX, an aerospace web application, and a bell nozzle designed in OpenSCAD, simulated in OpenFOAM, and printed in PLA.">
   <link rel="canonical" href="https://deeppatel4000-pixel.github.io/projects/">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Deep Patel">
   <meta property="og:title" content="Projects · Deep Patel">
   <meta property="og:description" content="An aerospace web application, and a bell nozzle taken from geometry to a printed part.">
+  <meta property="og:url" content="https://deeppatel4000-pixel.github.io/projects/">
+  <meta property="og:image" content="https://deeppatel4000-pixel.github.io/assets/og/projects.jpg">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -23,6 +28,7 @@
           <li><a href="/">Home</a></li>
           <li><a href="/projects/" aria-current="page">Projects</a></li>
           <li><a href="/experience/">Experience</a></li>
+          <li><a href="/assets/deep-patel-resume.pdf">Resume</a></li>
         </ul>
       </nav>
     </div>
@@ -33,10 +39,10 @@
       <div class="wrap">
         <h1 class="project-header__title">Projects</h1>
         <p class="lede">
-          These are the two projects I have taken the furthest so far. ORBIX is an aerospace
-          web app I kept expanding as I found new problems I wanted it to solve. The bell
-          nozzle began as a propulsion design, then took me through CAD, CFD, debugging, and
-          fabrication. The case studies show the work behind both.
+          These are the two projects I have taken the furthest. ORBIX is an aerospace
+          engineering web app that I conceived, researched, and directed. The bell nozzle
+          started as a propulsion design and took me through CAD, CFD, debugging, and
+          fabrication. Each case study shows the work behind it, including what went wrong.
         </p>
       </div>
     </div>
@@ -52,12 +58,13 @@
               <p class="feature__kind">Software · Aerospace web application · 2026</p>
               <h3 class="feature__title" id="p-orbix">ORBIX</h3>
               <p class="feature__summary">
-                ORBIX currently covers 10 vehicles, five aircraft and five launch vehicles.
-                Each value keeps its units, qualifier, and source. Users can compare vehicles,
-                work through 33 Engineering Lab modules across six workflows, and use mission
-                tools for preparation, analysis, simulation, and replay.
+                Thirteen engineering calculators, a mission planner, and profiles of five
+                aircraft and five launch vehicles. A Verification page checks the results
+                against published worked examples, and 26 of 36 compared values fall within
+                rounding. The idea and research are mine, and AI coding assistants wrote the
+                code under my direction.
               </p>
-              <p class="feature__tools">Next.js · React · TypeScript · Tailwind CSS · Vitest · Playwright</p>
+              <p class="feature__tools">Next.js · React · TypeScript · Vitest · Playwright · Codex · Claude Code</p>
               <p class="feature__links">
                 <a class="link-arrow" href="orbix/">Read the ORBIX case study</a>
                 <a class="link-arrow" href="https://orbix-aerospace.vercel.app" rel="noopener">Open the live app</a>
@@ -69,12 +76,13 @@
         <figure class="feature__figure">
           <div class="wrap">
             <img
-              src="../assets/orbix/orbix-launch-registry.webp"
-              alt="The ORBIX launch vehicle registry: Falcon 9, Falcon Heavy, and Saturn V shown as cards with photographs, orbit classes, liftoff thrust, and stage counts."
-              width="1585" height="1090" loading="lazy" decoding="async"
+              src="../assets/orbix/v4/orbix-transfer-explorer.webp"
+              alt="The ORBIX Hohmann transfer tool set to geosynchronous orbit with a craft partway along the transfer arc, showing burns of 2,457 and 1,478 m/s and a total of 3,935 m/s, with a sentence explaining each step."
+              width="1800" height="1264" loading="lazy" decoding="async"
             >
             <figcaption>
-              The launch vehicle registry. Each card opens into a full engineering profile.
+              The Hohmann transfer tool in the Engineering Lab, partway through playing the
+              coast to geosynchronous orbit.
             </figcaption>
           </div>
         </figure>
@@ -89,10 +97,10 @@
             <p class="feature__summary">
               A bell nozzle drawn in OpenSCAD from a six-point profile, meshed and run through
               SimFlow and OpenFOAM, and printed in PLA. The simulation never converged, so most
-              of the project became working out why, and the case study keeps that result
-              rather than dressing it up.
+              of the project became working out why. The case study shows that result as it
+              happened.
             </p>
-            <p class="feature__tools">OpenSCAD · SimFlow · OpenFOAM · ParaView · FDM</p>
+            <p class="feature__tools">OpenSCAD · SimFlow · OpenFOAM · ParaView · Cura · PLA printing</p>
             <p class="feature__links">
               <a class="link-arrow" href="bell-nozzle/">Read the Bell Nozzle case study</a>
             </p>
@@ -119,9 +127,8 @@
         </div>
         <div class="prose">
           <p>
-            ORBIX is still in development, and I plan to keep adding vehicles, engineering
-            tools and mission features to it as I learn more. Anything I build after this
-            will go here alongside these two.
+            I plan to keep adding vehicles, engineering tools, and mission features to ORBIX
+            as I learn more. Anything I build next will go here alongside these two.
           </p>
         </div>
       </div>
@@ -136,10 +143,13 @@
   <footer class="site-footer">
     <div class="wrap site-footer__inner">
       <p>Deep Patel · Chelmsford, Massachusetts</p>
-      <p><a href="mailto:deep.patel4000@gmail.com">deep.patel4000@gmail.com</a></p>
+      <p>
+        <a href="mailto:deep.patel4000@gmail.com">deep.patel4000@gmail.com</a>
+        <span aria-hidden="true">·</span>
+        <a href="../assets/deep-patel-resume.pdf">Resume (PDF)</a>
+      </p>
     </div>
   </footer>
 
-  <script src="../script.js" defer></script>
 </body>
 </html>
