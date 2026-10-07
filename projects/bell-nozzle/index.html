@@ -96,7 +96,7 @@
               The relation that matters after that is the one between area ratio and exit Mach
               number for a given ratio of specific heats. You pick the Mach number you want at
               the exit, and it tells you how much bigger the exit has to be than the throat.
-              I worked my sizing around a LOX/RP-1 case: an oxidizer to fuel ratio of 2.56, a
+              I worked my sizing around a LOX/RP-1 case: an oxidizer to fuel ratio of 2.3, a
               100 bar chamber at about 3615 K, expanding to 0.7 bar at roughly 3 km altitude,
               with a ratio of specific heats of 1.2 and a molecular weight of 22.65 g/mol. I
               started with a rough target of Mach 3.5 at the exit.
@@ -115,7 +115,7 @@
           <div class="prose">
             <p>
               I built the nozzle in OpenSCAD. The whole shape comes from a six-point profile,
-              which is the exit, four points down the diverging wall, the throat, and the
+              which is the exit, three points down the diverging wall, the throat, and the
               inlet. That profile gets revolved around the centerline with
               <span class="nowrap">rotate_extrude()</span>, then offset by a constant wall
               thickness so it is a shell instead of a solid.
