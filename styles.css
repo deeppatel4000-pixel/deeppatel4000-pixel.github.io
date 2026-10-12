@@ -712,6 +712,12 @@ main:focus {
   max-width: min(28rem, 100%);
 }
 
+/* a single tall portrait, kept narrow so it does not outweigh the photos
+   around it */
+.evidence--portrait {
+  max-width: min(18rem, 100%);
+}
+
 /* source credit for photographs Deep did not take, quieter than the caption
    it sits under but still plainly readable */
 .credit {
@@ -726,6 +732,10 @@ main:focus {
   .evidence {
     grid-template-columns: 1fr 1fr;
     gap: var(--space-4);
+  }
+
+  .evidence.evidence--single {
+    grid-template-columns: 1fr;
   }
 
   .evidence.evidence--compact {
