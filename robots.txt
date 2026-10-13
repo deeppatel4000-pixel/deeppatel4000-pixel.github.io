@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://deeppatel4000-pixel.github.io/sitemap.xml
