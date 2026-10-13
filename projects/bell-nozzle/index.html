@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bell Nozzle · Deep Patel</title>
-  <meta name="description" content="A bell nozzle I drew in OpenSCAD and printed in PLA, with a SimFlow and OpenFOAM simulation that never converged.">
+  <meta name="description" content="A bell nozzle I drew in OpenSCAD and printed in PLA, with a SimFlow simulation that never converged.">
   <link rel="canonical" href="https://deeppatel4000-pixel.github.io/projects/bell-nozzle/">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Deep Patel">
@@ -40,8 +40,8 @@
         <a class="project-header__back" href="/projects/">Projects</a>
         <h1 class="project-header__title">Bell Nozzle</h1>
         <p class="lede">
-          I drew a bell nozzle in OpenSCAD, tried to simulate the flow through it in SimFlow and
-          OpenFOAM, and printed it in PLA. The part printed. The CFD never converged, so most of
+          I drew a bell nozzle in OpenSCAD, tried to simulate the flow through it in SimFlow,
+          and printed it in PLA. The part printed. The CFD never converged, so most of
           this page is about the debugging.
         </p>
         <dl class="project-meta">
@@ -55,7 +55,7 @@
           </div>
           <div>
             <dt>Tools</dt>
-            <dd>OpenSCAD, SimFlow, OpenFOAM, ParaView, Cura</dd>
+            <dd>OpenSCAD, SimFlow, ParaView, Cura</dd>
           </div>
           <div>
             <dt>Outcome</dt>
@@ -226,7 +226,7 @@
             </p>
             <p>
               That went into SimFlow, which is the interface I used to set up and run the case.
-              The solver underneath it is OpenFOAM, and I used ParaView to look at the results.
+              I used ParaView to look at the results.
               SimFlow's free version caps a mesh at 200,000 nodes on a single core, and that
               limit shaped everything that came after.
             </p>
@@ -240,7 +240,7 @@
             </div>
             <div>
               <dt>Solver</dt>
-              <dd>OpenFOAM v2212, rhoSimpleFoam (steady, compressible)</dd>
+              <dd>rhoSimpleFoam (steady, compressible)</dd>
             </div>
             <div>
               <dt>Mesh</dt>
@@ -296,7 +296,7 @@
           <h3 class="subhead">What I tried</h3>
           <div class="prose">
             <p>
-              The early runs did not really run. OpenFOAM would abort inside the
+              The early runs did not really run. The solver would abort inside the
               thermodynamics and report a temperature of about minus 1×10<sup>17</sup> K, which
               is the solver saying the energy equation produced something meaningless and it
               will not carry on. That happened within one or two iterations.
