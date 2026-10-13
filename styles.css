@@ -219,9 +219,6 @@ main:focus {
   padding-bottom: 1px;
 }
 
-.link-arrow + .link-arrow {
-  margin-left: var(--space-5);
-}
 
 /* --- header --------------------------------------------------------------- */
 
@@ -460,6 +457,9 @@ main:focus {
 
 .feature__links {
   margin-top: var(--space-5);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-5);
 }
 
 .feature__tools {
@@ -473,6 +473,11 @@ main:focus {
   margin-inline: auto;
   border: 0;
   border-radius: 0;
+}
+
+.feature__aside.feature__aside--portrait figcaption {
+  max-width: 19rem;
+  margin-inline: auto;
 }
 
 .feature__head {
@@ -697,6 +702,13 @@ main:focus {
   width: 100%;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
+}
+
+/* photos in a pair share one shape so the row ends evenly; the lightbox
+   still shows each photo uncropped */
+.evidence--matched img {
+  aspect-ratio: var(--ar, 3 / 2);
+  object-fit: cover;
 }
 
 .evidence figcaption {

@@ -101,8 +101,9 @@
               number for a given ratio of specific heats. You pick the Mach number you want at
               the exit, and it tells you how much bigger the exit has to be than the throat.
               I worked my sizing around a LOX/RP-1 case: an oxidizer to fuel ratio of 2.3, a
-              100 bar chamber at about 3615 K, expanding to 0.7 bar at roughly 3 km altitude,
-              with a ratio of specific heats of 1.2 and a molecular weight of 22.65 g/mol. I
+              100 bar chamber at about 3615 K, expanding to 0.7 bar at roughly 3 km altitude.
+              NASA CEA put the molecular weight at about 22.65 g/mol at the throat and the ratio
+              of specific heats between 1.15 and 1.22. For hand calculations I used 1.2. I
               started with a rough target of Mach 3.5 at the exit.
             </p>
           </div>
@@ -194,8 +195,8 @@
 
           <div class="prose prose--after-spec">
             <p>
-              The throat and exit radii came from NASA CEA, which I ran for this engine on
-              8 October 2025. CEA gives an exit to throat area ratio of 15.916 and an exit Mach
+              I set the throat and exit radii to match the area ratio from NASA CEA, which I
+              ran for this engine on 8 October 2025. CEA gives an exit to throat area ratio of 15.916 and an exit Mach
               number of 3.54. The exit radius divided by the throat radius is 3.99, so the part
               I printed has a geometric area ratio of 15.92, matching it. As a check, the simple
               isentropic relation with a fixed ratio of specific heats of 1.2 gives about Mach
@@ -239,7 +240,7 @@
             </div>
             <div>
               <dt>Solver</dt>
-              <dd>OpenFOAM v2212</dd>
+              <dd>OpenFOAM v2212, rhoSimpleFoam (steady, compressible)</dd>
             </div>
             <div>
               <dt>Mesh</dt>
@@ -255,7 +256,11 @@
             </div>
             <div>
               <dt>Inlet</dt>
-              <dd>Pressure inlet, 100 bar total</dd>
+              <dd>Pressure inlet, 100 bar total, 3615 K</dd>
+            </div>
+            <div>
+              <dt>Outlet</dt>
+              <dd>Static pressure, 0.7 bar</dd>
             </div>
           </dl>
 
@@ -264,8 +269,7 @@
               The mesh is the weak point, and I can see that more clearly now than I could
               then. It is a uniform box wrapped around the nozzle, so the cells are the same
               size at the throat as they are out in the corner of the domain, where nothing
-              happens. The 0.7 bar exit target comes from my sizing notes. The 100 bar inlet I
-              can still read straight off the case setup.
+              happens.
             </p>
           </div>
 
@@ -367,7 +371,7 @@
               10<sup>49</sup>, a maximum pressure of about 10<sup>101</sup>, and a minimum
               pressure of about minus 10<sup>99</sup>. Physically meaningless numbers like these
               mean the case was falling apart. In the residual plot from that run, the three
-              velocity residuals level off between 10<sup>-2</sup> and 10<sup>-1</sup>, while
+              velocity residuals level off between about 0.01 and 0.05, while
               the enthalpy residual stays pinned at 1. A converging case would show all of them
               dropping together.
             </p>
@@ -522,7 +526,7 @@
 
   <footer class="site-footer">
     <div class="wrap site-footer__inner">
-      <p>Deep Patel · Chelmsford, Massachusetts</p>
+      <p>Deep Patel · Lowell, Massachusetts</p>
       <p>
         <a href="mailto:deep.patel4000@gmail.com">deep.patel4000@gmail.com</a>
         <span aria-hidden="true">·</span>
