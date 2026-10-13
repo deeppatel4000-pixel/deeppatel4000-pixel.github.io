@@ -4,12 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ORBIX · Deep Patel</title>
-  <meta name="description" content="ORBIX is an aerospace web application I designed and built: aircraft and launch vehicle profiles, a comparison engine, an engineering lab of 33 modules, and mission control with replay.">
+  <meta name="description" content="How I planned and researched ORBIX, an aerospace engineering web app with 13 calculators and ten real vehicles.">
   <link rel="canonical" href="https://deeppatel4000-pixel.github.io/projects/orbix/">
   <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Deep Patel">
   <meta property="og:title" content="ORBIX · Deep Patel">
-  <meta property="og:description" content="An aerospace web application with vehicle profiles, a comparison engine, an engineering lab, and mission simulation.">
+  <meta property="og:description" content="An aerospace engineering web app whose calculators are checked against published worked examples.">
+  <meta property="og:url" content="https://deeppatel4000-pixel.github.io/projects/orbix/">
+  <meta property="og:image" content="https://deeppatel4000-pixel.github.io/assets/og/orbix.jpg">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
   <link rel="stylesheet" href="../../styles.css">
 </head>
 <body>
@@ -21,8 +26,9 @@
       <nav class="site-nav" aria-label="Primary">
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/projects/" aria-current="page">Projects</a></li>
+          <li><a href="/projects/" aria-current="true">Projects</a></li>
           <li><a href="/experience/">Experience</a></li>
+          <li><a href="/assets/deep-patel-resume.pdf">Resume</a></li>
         </ul>
       </nav>
     </div>
@@ -34,23 +40,24 @@
         <a class="project-header__back" href="/projects/">Projects</a>
         <h1 class="project-header__title">ORBIX</h1>
         <p class="lede">
-          I designed and built ORBIX as a personal aerospace software project. It puts real
-          aircraft and launch vehicles, the engineering math behind them, and full mission
-          simulations into one application, and it keeps every number attached to the source
-          and the units it came with.
+          ORBIX is an aerospace engineering web app built around real aircraft and launch
+          vehicles. You can drag an orbit and watch the delta-v change, plan a mission burn by
+          burn, or put three aircraft side by side, and the results are checked against
+          published worked examples. The idea, the research, and the design decisions are mine,
+          and I used AI coding tools to write the code.
         </p>
         <dl class="project-meta">
           <div>
-            <dt>Type</dt>
-            <dd>Web application</dd>
+            <dt>Started</dt>
+            <dd>August 2026</dd>
           </div>
           <div>
-            <dt>Role</dt>
-            <dd>Design and build</dd>
+            <dt>My role</dt>
+            <dd>Idea, research, design decisions, review</dd>
           </div>
           <div>
             <dt>Scale</dt>
-            <dd>10 vehicles, 33 lab modules</dd>
+            <dd>13 calculators, a mission planner, 10 vehicles</dd>
           </div>
           <div>
             <dt>Live</dt>
@@ -60,235 +67,59 @@
       </div>
     </div>
 
-    <section class="section" aria-labelledby="ox-why">
+    <section class="section" aria-labelledby="ox-what">
       <div class="wrap section__grid">
         <div class="section__rail">
-          <h2 class="section__title" id="ox-why">Why I built ORBIX</h2>
+          <h2 class="section__title" id="ox-what">What it is</h2>
+        </div>
+        <div>
+          <div class="prose">
+            <p>
+              I plan to study aerospace engineering, and I wanted one place where I could look
+              at real vehicles and work through the engineering behind them: lift and drag, the
+              rocket equation, orbital transfers, shock waves, and entry heating. ORBIX is that
+              place, and it is free for anyone to use.
+            </p>
+            <p>
+              The home page opens on the Transfer Explorer. Drag the target orbit anywhere from
+              160 km to 400,000 km and ORBIX recomputes the two burns of a Hohmann transfer, the
+              total delta-v, and the coast time, then explains each burn in a sentence.
+            </p>
+          </div>
+
+          <figure class="figure figure--wide">
+            <img
+              src="../../assets/orbix/v4/orbix-home.webp"
+              alt="The ORBIX home page with the Transfer Explorer showing a transfer from a 200 km orbit to a 35,786 km orbit: 3,935 m/s total delta-v and a 5 h 15 min transfer."
+              width="1800" height="1286" loading="lazy" decoding="async"
+            >
+            <figcaption>
+              The home page with the Transfer Explorer set to a geosynchronous target.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tinted" aria-labelledby="ox-role">
+      <div class="wrap section__grid">
+        <div class="section__rail">
+          <h2 class="section__title" id="ox-role">How I built it</h2>
         </div>
         <div class="prose">
           <p>
-            I built ORBIX because I wanted one place to look through the information I needed
-            on aircraft and launch vehicles, instead of jumping between different sources every
-            time. I also wanted that information to be useful once it was there, so values keep
-            their units, qualifiers and sources with them.
+            I chose the aircraft and launch vehicles, decided which
+            calculators and mission scenarios to build, and worked out how the pieces connect.
+            For each tool I researched the engineering and the vehicle specifications, then
+            wrote instructions giving the exact equations, inputs, and units it needed. I also set
+            the standards the site had to meet for design, accessibility, and the legal side of
+            running a public website, and I reviewed the results against them.
           </p>
           <p>
-            From there it grew into more than a vehicle reference. The Engineering Lab has 33
-            modules with calculators and analysis tools you can put your own numbers into, and
-            the mission side lets you take that information further into mission analysis,
-            preparation, simulation and replay.
+            To write the software, I used AI coding tools, first Codex and later Claude Code,
+            working from those instructions. The full project history is
+            <a href="https://github.com/deeppatel4000-pixel/orbix-aerospace" rel="noopener">public on GitHub</a>.
           </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--tinted" aria-labelledby="ox-scope">
-      <div class="wrap section__grid">
-        <div class="section__rail">
-          <h2 class="section__title" id="ox-scope">What ORBIX became</h2>
-          <p class="section__note">Ten vehicles and a growing set of engineering tools.</p>
-        </div>
-        <div>
-          <div class="prose">
-            <p>
-              The application is organized around ten vehicles: five aircraft, the F-22, F-35,
-              F-15, B-2 and SR-71, and five launch vehicles, Falcon 9, Falcon Heavy, Saturn V,
-              SLS and Starship. Each one has a discovery page and a full engineering profile.
-            </p>
-            <p>
-              On top of that sit the comparison engine, the Engineering Lab, mission control
-              with replay, a showcase, and a learning section for the underlying theory.
-            </p>
-          </div>
-
-          <figure class="figure figure--wide">
-            <img
-              src="../../assets/orbix/orbix-aircraft-registry.webp"
-              alt="The ORBIX aircraft registry showing engineering profile cards for the F-22 Raptor, F-35 Lightning II, SR-71 Blackbird, B-2 Spirit and F-15 Eagle, each with a role label, a short description, maximum speed and service ceiling."
-              width="1585" height="1130" loading="lazy" decoding="async"
-            >
-            <figcaption>
-              The aircraft registry. Every card carries the role, the maximum speed and the
-              service ceiling, and opens into a full profile.
-            </figcaption>
-          </figure>
-
-          <figure class="figure">
-            <img
-              src="../../assets/orbix/orbix-vehicle-profile.webp"
-              alt="The Falcon 9 technical dashboard in ORBIX, showing vehicle height 70 m, liftoff mass 549,054 kg, liftoff thrust 7,686 kN, two stage sections, country of origin and six mission records, above a launch vehicle architecture panel describing the first stage propellants."
-              width="1585" height="1020" loading="lazy" decoding="async"
-            >
-            <figcaption>
-              A vehicle profile. The technical dashboard is assembled from the selected
-              configuration, so the height, mass and thrust always belong to the same variant.
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="ox-grew">
-      <div class="wrap section__grid">
-        <div class="section__rail">
-          <h2 class="section__title" id="ox-grew">How ORBIX grew</h2>
-          <p class="section__note">Five steps, in the order they happened.</p>
-        </div>
-        <div>
-          <ol class="milestones">
-            <li class="milestone">
-              <p class="milestone__index" aria-hidden="true">01</p>
-              <div class="milestone__body">
-                <h3 class="milestone__title">Building the vehicle library</h3>
-                <div class="prose">
-                  <p>
-                    I started with the vehicles themselves. I wanted one place where I could
-                    move between aircraft and launch vehicles without piecing the information
-                    together from separate sources. That became the discovery pages and the
-                    individual profiles, five aircraft and five launch vehicles, each one
-                    opening into a full engineering profile.
-                  </p>
-                </div>
-                <figure class="figure">
-                  <img
-                    src="../../assets/orbix/milestones/orbix-vehicle-discovery.webp"
-                    alt="The ORBIX launch vehicle discovery page showing Falcon 9, Falcon Heavy and Saturn V as large cards with launch photographs, their orbit classes, liftoff thrust and stage count."
-                    width="1584" height="1000" loading="lazy" decoding="async"
-                  >
-                  <figcaption>
-                    The launch vehicle discovery page. Each card carries the orbit classes,
-                    liftoff thrust and stage count before you open the profile.
-                  </figcaption>
-                </figure>
-              </div>
-            </li>
-
-            <li class="milestone">
-              <p class="milestone__index" aria-hidden="true">02</p>
-              <div class="milestone__body">
-                <h3 class="milestone__title">Making comparison useful</h3>
-                <div class="prose">
-                  <p>
-                    Once the profiles worked, I wanted to compare vehicles without flipping
-                    between pages. Compare started as a way to put the numbers next to each
-                    other. Then I worked on making the size of the differences easier to read,
-                    so a row is not only three figures but a sense of how far apart they are.
-                  </p>
-                </div>
-                <figure class="figure">
-                  <img
-                    src="../../assets/orbix/milestones/orbix-compare-magnitudes.webp"
-                    alt="The ORBIX comparison engine with Falcon 9, Saturn V and Starship side by side, grouped into heritage, geometry and mass, with heights of 70 m, 111 m and 124.4 m each shown as a bar and labeled with a note such as nominal value."
-                    width="1584" height="1000" loading="lazy" decoding="async"
-                  >
-                  <figcaption>
-                    Three launch vehicles compared. Each value keeps the note that says how it
-                    was measured, and the bar under it shows the relative size.
-                  </figcaption>
-                </figure>
-              </div>
-            </li>
-
-            <li class="milestone">
-              <p class="milestone__index" aria-hidden="true">03</p>
-              <div class="milestone__body">
-                <h3 class="milestone__title">Turning the data into tools</h3>
-                <div class="prose">
-                  <p>
-                    The biggest change came when ORBIX stopped being only a reference. I built
-                    the Engineering Lab so I could enter my own values and work through the
-                    calculations myself. It grew to 33 modules across six engineering
-                    workflows, including calculators and analysis tools.
-                  </p>
-                </div>
-                <figure class="figure">
-                  <img
-                    src="../../assets/orbix/milestones/orbix-engineering-lab-workflows.webp"
-                    alt="The ORBIX Engineering Lab workflow index listing six workflows from engineering foundations to review and presentation, with the six modules of the first workflow shown beside it above the Tsiolkovsky rocket equation calculator."
-                    width="1584" height="1000" loading="lazy" decoding="async"
-                  >
-                  <figcaption>
-                    The workflow index. Six workflows run from engineering foundations through
-                    to review and presentation, with the modules for each one listed beside it.
-                  </figcaption>
-                </figure>
-              </div>
-            </li>
-
-            <li class="milestone">
-              <p class="milestone__index" aria-hidden="true">04</p>
-              <div class="milestone__body">
-                <h3 class="milestone__title">Planning and replaying missions</h3>
-                <div class="prose">
-                  <p>
-                    After the engineering tools, I started thinking about how the same
-                    information fits into a mission. Mission Control and Mission Replay let me
-                    move from single calculations into mission preparation, analysis and
-                    replay, so a mission can be set up, run, and then stepped back through
-                    afterwards. The section further down this page shows that workspace.
-                  </p>
-                </div>
-              </div>
-            </li>
-
-            <li class="milestone">
-              <p class="milestone__index" aria-hidden="true">05</p>
-              <div class="milestone__body">
-                <h3 class="milestone__title">Keeping it all working</h3>
-                <div class="prose">
-                  <p>
-                    As ORBIX got larger, keeping everything working became part of the project
-                    too. I added automated tests, tightened the responsive layouts, and worked
-                    through the small inconsistencies that showed up once many features were
-                    sharing the same interface.
-                  </p>
-                </div>
-              </div>
-            </li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--tinted" aria-labelledby="ox-data">
-      <div class="wrap section__grid">
-        <div class="section__rail">
-          <h2 class="section__title" id="ox-data">Keeping the numbers honest</h2>
-        </div>
-        <div>
-          <div class="prose">
-            <p>
-              Public sources do not always agree. An empty mass can mean one configuration in
-              one source and a slightly different one somewhere else, and the units and
-              assumptions behind a figure are not always shown next to it. Put two vehicles
-              side by side that way and you can end up comparing values that were never
-              measured in the same way.
-            </p>
-            <p>
-              This is the part of ORBIX a screenshot hides. A vehicle in ORBIX is not a page of
-              text. It is a configuration: a set of values, each with its unit, its qualifier,
-              and the source it came from. The profile pages, the comparison engine and the
-              mission tools all read from that same configuration.
-            </p>
-            <p>
-              That is what makes the comparison honest. When the table says an F-22 has an
-              empty mass of 43,340 lb, it also says that value is an approximate public figure,
-              and it will not quietly compare it against a nominal value from another aircraft
-              without telling you.
-            </p>
-          </div>
-
-          <figure class="figure figure--wide">
-            <img
-              src="../../assets/orbix/orbix-compare.webp"
-              alt="The ORBIX comparison engine with the F-22 Raptor, F-35 Lightning II and SR-71 Blackbird side by side, grouped into heritage, geometry, mass and structures, propulsion and performance, with each value carrying a note such as nominal value or approximate public value."
-              width="1585" height="1180" loading="lazy" decoding="async"
-            >
-            <figcaption>
-              Three aircraft compared. Values stay grouped by engineering category, and each
-              one keeps the note that says how it was measured.
-            </figcaption>
-          </figure>
         </div>
       </div>
     </section>
@@ -297,158 +128,225 @@
       <div class="wrap section__grid">
         <div class="section__rail">
           <h2 class="section__title" id="ox-lab">The Engineering Lab</h2>
-          <p class="section__note">33 modules across six workflows.</p>
         </div>
         <div>
           <div class="prose">
             <p>
-              The Lab is where ORBIX stops being a reference and starts being a tool. It holds
-              33 modules across six engineering workflows, including calculators and analysis
-              tools. The workflows are engineering foundations, compressible flow, entry
-              systems, orbital and mission design, mission operations, and review and
-              presentation.
-            </p>
-            <p>
-              Each module shows its inputs with units, the equation being solved, and what
-              every variable in that equation means. The calculation is visible instead of
-              being hidden behind a result, and the inputs are yours to set, so you are not
-              limited to the vehicle data already in ORBIX.
+              Each tool in the lab shows its equation, units, and assumptions next to the
+              result. The 13 calculators and the mission planner fall into three groups:
             </p>
           </div>
 
+          <dl class="spec">
+            <div>
+              <dt>Foundations</dt>
+              <dd>Rocket equation, thrust-to-weight, lift, drag, standard atmosphere, flight condition</dd>
+            </div>
+            <div>
+              <dt>Compressible flow</dt>
+              <dd>Stagnation condition, normal shock, oblique shock, supersonic inlet compression, stagnation-point heating</dd>
+            </div>
+            <div>
+              <dt>Orbits and missions</dt>
+              <dd>Hohmann transfer, orbital plane change, mission planner</dd>
+            </div>
+          </dl>
+
           <figure class="figure figure--wide">
             <img
-              src="../../assets/orbix/orbix-lab-calculator.webp"
-              alt="The ORBIX Engineering Lab showing the Tsiolkovsky rocket equation calculator with initial mass, final mass and specific impulse inputs in kilograms and seconds, a computed ideal delta-v panel, and an equation model panel defining every variable, alongside a workflow index of six workflows."
-              width="1585" height="1120" loading="lazy" decoding="async"
+              src="../../assets/orbix/v4/orbix-transfer-explorer.webp"
+              alt="The Hohmann transfer tool set to geosynchronous orbit: burn 1 of 2,457 m/s and burn 2 of 1,478 m/s, 3,935 m/s total."
+              width="1800" height="1264" loading="lazy" decoding="async"
             >
             <figcaption>
-              The rocket equation module. Inputs carry their units, and the equation model
-              panel names every term in the formula being applied.
+              Playback, with the craft partway along the arc. It moves on Kepler timing, and
+              the readout gives the time since burn 1 and its altitude and speed at that moment.
             </figcaption>
           </figure>
-        </div>
-      </div>
-    </section>
 
-    <section class="section section--tinted" aria-labelledby="ox-mission">
-      <div class="wrap section__grid">
-        <div class="section__rail">
-          <h2 class="section__title" id="ox-mission">Mission Control and Replay</h2>
-        </div>
-        <div>
           <div class="prose">
             <p>
-              Mission Control takes a mission preset, an ISS-style resupply for example, and
-              opens it as a full workspace: the mission profile, the orbital visualization,
-              the phase sequence, and the report that comes out of it. The phases run from
-              launch and departure through orbit transfer and maneuver, and each one resolves
-              from the mission configuration rather than being written in by hand.
-            </p>
-            <p>
-              Replay is the other half. Once a mission has run you can play it back and step
-              through what happened, which is how you check that a change to a calculation
-              actually did what you expected across the whole sequence.
+              The mission planner strings those calculations together. Pick a preset such as a
+              LEO satellite deployment or a lunar transfer, and it lists every burn in flight
+              order with its delta-v. Steps it does not model, like the launch itself, show up
+              as plain rows that say so. The presets then appear on one shared axis, so a lunar
+              transfer at 4,049 m/s sits next to a 199.5 m/s orbit raise at the same scale.
             </p>
           </div>
 
           <figure class="figure">
             <img
-              src="../../assets/orbix/orbix-mission-control.webp"
-              alt="ORBIX Mission Control showing the ISS Style Resupply mission profile with its category, preset, workspace and educational simulation status, a replay startup control, and twelve mission workspaces grouped into mission, engineering, review and presentation."
-              width="790" height="858" loading="lazy" decoding="async"
-              class="figure__portrait-wide"
+              src="../../assets/orbix/v4/orbix-mission-planner.webp"
+              alt="The mission planner for a LEO satellite deployment: burns of 100.4 and 99.1 m/s around a 46 minute coast, 199.5 m/s total, above a bar chart of four presets."
+              width="1640" height="1757" loading="lazy" decoding="async"
             >
             <figcaption>
-              A mission open in Mission Control, with its twelve workspaces. Replay sits in the
-              presentation group on the right.
+              The chart also shows ISS-style resupply and a Mars transfer concept. The Mars row
+              is labeled as preset allowances because ORBIX does not compute that mission.
             </figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="ox-reliability">
+    <section class="section section--tinted" aria-labelledby="ox-check">
       <div class="wrap section__grid">
         <div class="section__rail">
-          <h2 class="section__title" id="ox-reliability">Making it reliable as it grew</h2>
+          <h2 class="section__title" id="ox-check">Checking the math</h2>
+          <p class="section__note">26 of 36 values within rounding.</p>
         </div>
         <div>
           <div class="prose">
             <p>
-              Because everything reads from the same vehicle configurations and the same
-              calculation code, a change in one place can reach a long way. Adjust how a unit
-              is handled and you have potentially touched every profile, the comparison engine,
-              and half the Lab. At that size, checking the effect by clicking through the
-              application is no longer practical, so the tests do it instead.
+              To check the calculators, ORBIX has a Verification page. It runs selected lab functions with the inputs from
+              published tables and worked examples, then prints each result beside the
+              published value. The ORBIX numbers come from the same functions the lab uses, so
+              none of them are typed in by hand.
             </p>
             <p>
-              The unit tests cover the calculations and the data handling. The browser tests
-              drive the real interface, including an accessibility suite and a visual set that
-              catches unintended layout changes. All of it runs in GitHub Actions, and the
-              build has to pass before anything reaches Vercel.
+              The sources are Robert A. Braeunig's example problems, Brennen's Internet Book on
+              Fluid Dynamics, NACA Report 1135, and the U.S. Standard Atmosphere, 1976. Of 36
+              compared values, 26 fall within the rounding of the published figure. The other
+              10 stay on the page with a reason for each. In the Hohmann case below, the source
+              rounds each speed before subtracting, while ORBIX keeps full precision, so the
+              two disagree by about 1 m/s.
             </p>
           </div>
 
-          <h3 class="subhead">Final validation run</h3>
-          <dl class="spec">
-            <div>
-              <dt>Unit tests</dt>
-              <dd>936 of 936 passing (Vitest)</dd>
-            </div>
-            <div>
-              <dt>Browser tests</dt>
-              <dd>463 passed, 359 skipped, 0 failed (Playwright)</dd>
-            </div>
-            <div>
-              <dt>Accessibility</dt>
-              <dd>131 passed, 10 skipped</dd>
-            </div>
-            <div>
-              <dt>Visual regression</dt>
-              <dd>28 of 28</dd>
-            </div>
-            <div>
-              <dt>Build</dt>
-              <dd>Clean production build</dd>
-            </div>
-          </dl>
+          <figure class="figure figure--wide">
+            <img
+              src="../../assets/orbix/v4/orbix-verification.webp"
+              alt="Verification table for a Hohmann transfer from low Earth orbit to geosynchronous orbit: burns of 2,454.59 and 1,477.27 m/s against published 2,455 and 1,478 m/s, 3,931.86 m/s total against 3,933."
+              width="1680" height="1240" loading="lazy" decoding="async"
+            >
+            <figcaption>
+              One of the 14 verification tables. Every difference is under 0.05 percent, yet
+              two rows are marked "outside rounding," and the note under the table explains why.
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
-    <section class="section section--tinted" aria-labelledby="ox-learned">
+    <section class="section" aria-labelledby="ox-vehicles">
       <div class="wrap section__grid">
         <div class="section__rail">
-          <h2 class="section__title" id="ox-learned">Where I want to take it</h2>
+          <h2 class="section__title" id="ox-vehicles">Real vehicles</h2>
         </div>
         <div>
           <div class="prose">
             <p>
-              ORBIX is still a project I am developing. There are parts I want to expand,
-              calculations I want to improve, and more I want to do with the mission tools.
-              What is on this page is where the project is now, not where I expect it to stop.
+              The aircraft are the F-22, F-35, F-15, B-2, and SR-71. The launch vehicles are
+              Falcon 9, Falcon Heavy, SLS, Saturn V, and Starship. Each one has a profile with
+              its published specifications, and every photo has a verified license and a
+              credit.
             </p>
             <p>
-              I wanted ORBIX in this portfolio so colleges can see what it does today, how much
-              work has gone into it, and the direction I want to keep taking it.
+              Public sources often disagree, so ORBIX shows values in the units the source
+              used and never converts them silently. A missing value reads "Not published"
+              instead of zero, and the compare page gives no ranking and no winner. The scale
+              drawings are outlines traced from public-domain government drawings and sized to
+              each vehicle's recorded height or length.
+            </p>
+          </div>
+
+          <figure class="figure figure--wide">
+            <img
+              src="../../assets/orbix/v4/orbix-rocket-heights.webp"
+              alt="Outlines of Falcon 9, Falcon Heavy, SLS, Saturn V, and Starship at one scale, from Falcon 9 at 70 m to Starship at 124.4 m."
+              width="1800" height="1152" loading="lazy" decoding="async"
+            >
+            <figcaption>
+              SLS stands 98.3 m and Saturn V about 111 m. The scale bar marks 50 m.
+            </figcaption>
+          </figure>
+
+          <figure class="figure figure--wide">
+            <img
+              src="../../assets/orbix/v4/orbix-compare.webp"
+              alt="The ORBIX compare page with the SR-71 Blackbird, F-22 Raptor, and B-2 Spirit, their plan-view outlines traced at one scale."
+              width="1800" height="1248" loading="lazy" decoding="async"
+            >
+            <figcaption>
+              The page comes preloaded with these three. Its comparison rules sit on the left,
+              ahead of the heritage data, which starts with manufacturer and first flight date.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tinted" aria-labelledby="ox-structure">
+      <div class="wrap section__grid">
+        <div class="section__rail">
+          <h2 class="section__title" id="ox-structure">How it is organized</h2>
+        </div>
+        <div>
+          <div class="prose">
+            <p>
+              The physics is kept separate from the pages. Each calculator is a
+              small function for one calculation, analyses combine several calculators into one
+              study, and the React components only draw the results. That separation is what
+              lets the Verification page call the exact functions the lab uses.
             </p>
             <p>
-              As the application grew, I also had to change how I worked on it. The same
-              vehicle data and calculations are used in several places, so automated tests
-              became important for catching problems that would be easy to miss by checking
-              pages one at a time.
+              Every change runs through GitHub Actions before it reaches the live site:
+              formatting, linting, type checks, 1,280 unit tests, a production build, and a
+              separate browser test suite at desktop, tablet, and phone sizes, which includes
+              accessibility checks.
+            </p>
+          </div>
+
+          <figure class="figure">
+            <img
+              src="../../assets/orbix/v4/orbix-architecture.webp"
+              alt="Diagram of the four code layers in ORBIX: Data, Calculators, and Analyses, with React below a presentation boundary."
+              width="1440" height="1380" loading="lazy" decoding="async"
+            >
+            <figcaption>
+              From the build log on the ORBIX site. The arrows show which layer imports from
+              which.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="ox-learned">
+      <div class="wrap section__grid">
+        <div class="section__rail">
+          <h2 class="section__title" id="ox-learned">What I learned</h2>
+        </div>
+        <div>
+          <div class="prose">
+            <p>
+              Building ORBIX taught me the basics of each aircraft and launch vehicle in it:
+              what each one was designed to do and how its design serves that purpose.
+            </p>
+            <p>
+              I learned more from the Engineering Lab. Before any tool could be built, I had to
+              research which equation it uses, what goes into it, and what the result means.
+              Across the lab, that meant learning how lift, drag, thrust, gravity, shock waves,
+              and heating behave, and working out how each one could be calculated. Using the
+              finished tools, I learned what it is like to change one input, rerun the
+              calculation, and see how an orbital transfer or a shock wave responds.
+            </p>
+            <p>
+              Taking ORBIX from planned features through testing and fixing mistakes gave me
+              real experience with how software gets made.
             </p>
           </div>
 
           <h3 class="subhead">Built with</h3>
           <p class="feature__tools">
-            Next.js 16 · React · TypeScript · Tailwind CSS 4 · Vitest · Playwright ·
-            GitHub Actions · Vercel
+            Next.js · React · TypeScript · Vitest · Playwright · GitHub Actions · Vercel ·
+            Codex · Claude Code
           </p>
 
           <p class="feature__links">
             <a class="link-arrow" href="https://orbix-aerospace.vercel.app" rel="noopener">Open ORBIX</a>
+            <a class="link-arrow" href="https://orbix-aerospace.vercel.app/build-log" rel="noopener">Read the build log</a>
+            <a class="link-arrow" href="https://github.com/deeppatel4000-pixel/orbix-aerospace" rel="noopener">Source on GitHub</a>
           </p>
         </div>
       </div>
@@ -462,9 +360,14 @@
 
   <footer class="site-footer">
     <div class="wrap site-footer__inner">
-      <p>Deep Patel · Chelmsford, Massachusetts</p>
-      <p><a href="mailto:deep.patel4000@gmail.com">deep.patel4000@gmail.com</a></p>
+      <p>Deep Patel · Lowell, Massachusetts</p>
+      <p>
+        <a href="mailto:deep.patel4000@gmail.com">deep.patel4000@gmail.com</a>
+        <span aria-hidden="true">·</span>
+        <a href="/assets/deep-patel-resume.pdf">Resume (PDF)</a>
+      </p>
     </div>
   </footer>
+  <script src="../../lightbox.js" defer></script>
 </body>
 </html>
