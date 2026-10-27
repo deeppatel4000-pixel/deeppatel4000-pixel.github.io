@@ -40,12 +40,29 @@
         <a class="project-header__back" href="/projects/">Projects</a>
         <h1 class="project-header__title">ORBIX</h1>
         <p class="lede">
-          ORBIX is an aerospace engineering web app built around real aircraft and launch
-          vehicles. You can drag an orbit and watch the delta-v change, plan a mission burn by
-          burn, or put three aircraft side by side, and the results are checked against
-          published worked examples. The idea, the research, and the design decisions are mine,
-          and I used AI coding tools to write the code.
+          An aerospace engineering web app built around real aircraft and launch vehicles.
+          Drag an orbit and watch the delta-v change, plan a mission burn by burn, or put three
+          aircraft side by side. The idea, the research, and the design decisions are mine, and
+          I used AI coding tools to write the code.
         </p>
+        <dl class="stats">
+          <div>
+            <dt>engineering calculators, plus a mission planner</dt>
+            <dd>13</dd>
+          </div>
+          <div>
+            <dt>real aircraft and launch vehicles</dt>
+            <dd>10</dd>
+          </div>
+          <div>
+            <dt>checked values within rounding of published examples</dt>
+            <dd>26 of 36</dd>
+          </div>
+          <div>
+            <dt>unit tests on every change</dt>
+            <dd>1,280</dd>
+          </div>
+        </dl>
         <dl class="project-meta">
           <div>
             <dt>Started</dt>
@@ -106,18 +123,15 @@
         <div class="section__rail">
           <h2 class="section__title" id="ox-role">How I built it</h2>
         </div>
-        <div class="prose">
-          <p>
-            I chose the aircraft and launch vehicles, decided which
-            calculators and mission scenarios to build, and worked out how the pieces connect.
-            For each tool I researched the engineering and the vehicle specifications, then
-            wrote instructions giving the exact equations, inputs, and units it needed. I also set
-            the standards the site had to meet for design, accessibility, and the legal side of
-            running a public website, and I reviewed the results against them.
-          </p>
-          <p>
-            To write the software, I used AI coding tools, first Codex and later Claude Code,
-            working from those instructions. The full project history is
+        <div>
+          <ul class="points">
+            <li><strong>I chose what to build:</strong> the aircraft, the launch vehicles, the calculators, the mission scenarios, and how they connect</li>
+            <li><strong>I researched every tool</strong> and wrote instructions giving its exact equations, inputs, and units</li>
+            <li><strong>I set the standards</strong> for design, accessibility, and the legal side of a public website, and reviewed the results against them</li>
+            <li><strong>AI coding tools wrote the software</strong> from those instructions, first Codex and later Claude Code</li>
+          </ul>
+          <p class="group__detail">
+            The full project history is
             <a href="https://github.com/deeppatel4000-pixel/orbix-aerospace" rel="noopener">public on GitHub</a>.
           </p>
         </div>
@@ -198,18 +212,19 @@
         <div>
           <div class="prose">
             <p>
-              To check the calculators, ORBIX has a Verification page. It runs selected lab functions with the inputs from
-              published tables and worked examples, then prints each result beside the
-              published value. The ORBIX numbers come from the same functions the lab uses, so
-              none of them are typed in by hand.
+              The Verification page runs selected lab functions on the inputs from published
+              worked examples and prints each result beside the published value. The numbers
+              come from the same functions the lab uses, so none are typed in by hand.
             </p>
             <p>
-              The sources are Robert A. Braeunig's example problems, Brennen's Internet Book on
-              Fluid Dynamics, NACA Report 1135, and the U.S. Standard Atmosphere, 1976. Of 36
-              compared values, 26 fall within the rounding of the published figure. The other
-              10 stay on the page with a reason for each. In the Hohmann case below, the source
-              rounds each speed before subtracting, while ORBIX keeps full precision, so the
-              two disagree by about 1 m/s.
+              <strong>26 of 36 values</strong> fall within the rounding of the published
+              figure. The other 10 stay on the page with a reason for each. In the Hohmann case
+              below, the source rounds each speed before subtracting and ORBIX does not, so
+              they differ by about 1 m/s.
+            </p>
+            <p>
+              Sources: Robert A. Braeunig's example problems, Brennen's Internet Book on Fluid
+              Dynamics, NACA Report 1135, and the U.S. Standard Atmosphere, 1976.
             </p>
           </div>
 
@@ -320,20 +335,15 @@
         <div>
           <div class="prose">
             <p>
-              Building ORBIX taught me the basics of each aircraft and launch vehicle in it:
-              what each one was designed to do and how its design serves that purpose.
+              Most of what I learned came from the Engineering Lab. Before any tool could be
+              built, I had to know which equation it uses, what goes into it, and what the
+              result means. That meant learning how lift, drag, thrust, gravity, shock waves,
+              and heating behave.
             </p>
             <p>
-              I learned more from the Engineering Lab. Before any tool could be built, I had to
-              research which equation it uses, what goes into it, and what the result means.
-              Across the lab, that meant learning how lift, drag, thrust, gravity, shock waves,
-              and heating behave, and working out how each one could be calculated. Using the
-              finished tools, I learned what it is like to change one input, rerun the
-              calculation, and see how an orbital transfer or a shock wave responds.
-            </p>
-            <p>
-              Taking ORBIX from planned features through testing and fixing mistakes gave me
-              real experience with how software gets made.
+              The finished tools taught me the rest: change one input, rerun it, and watch how
+              an orbital transfer or a shock wave responds. Taking ORBIX from a plan through
+              testing and fixes also showed me how real software gets made.
             </p>
           </div>
 

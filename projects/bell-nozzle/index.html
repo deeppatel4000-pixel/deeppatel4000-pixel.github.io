@@ -40,10 +40,28 @@
         <a class="project-header__back" href="/projects/">Projects</a>
         <h1 class="project-header__title">Bell Nozzle</h1>
         <p class="lede">
-          I drew a bell nozzle in OpenSCAD, tried to simulate the flow through it in SimFlow,
-          and printed it in PLA. The part printed. The CFD never converged, so most of
-          this page is about the debugging.
+          I sized a bell nozzle with NASA CEA, drew it in OpenSCAD, tried to simulate the flow
+          in SimFlow, and printed it in PLA. The part printed. The CFD never converged, so most
+          of this page is about the debugging.
         </p>
+        <dl class="stats">
+          <div>
+            <dt>area ratio, matching NASA CEA's 15.916</dt>
+            <dd>15.92</dd>
+          </div>
+          <div>
+            <dt>chamber pressure, LOX/RP-1</dt>
+            <dd>100 bar</dd>
+          </div>
+          <div>
+            <dt>tall, printed in PLA in 4 h 42 min</dt>
+            <dd>84.48 mm</dd>
+          </div>
+          <div>
+            <dt>iterations in my best CFD run before it diverged</dt>
+            <dd>24</dd>
+          </div>
+        </dl>
         <dl class="project-meta">
           <div>
             <dt>Type</dt>
@@ -100,11 +118,13 @@
               The relation that matters after that is the one between area ratio and exit Mach
               number for a given ratio of specific heats. You pick the Mach number you want at
               the exit, and it tells you how much bigger the exit has to be than the throat.
-              I worked my sizing around a LOX/RP-1 case: an oxidizer to fuel ratio of 2.3, a
-              100 bar chamber at about 3615 K, expanding to 0.7 bar at roughly 3 km altitude.
-              NASA CEA put the molecular weight at about 22.65 g/mol at the throat and the ratio
-              of specific heats between 1.15 and 1.22. For hand calculations I used 1.2. I
-              started with a rough target of Mach 3.5 at the exit.
+            </p>
+            <p>
+              I sized mine around a LOX/RP-1 case: an oxidizer to fuel ratio of 2.3, a 100 bar
+              chamber at about 3615 K, expanding to 0.7 bar at roughly 3 km altitude. NASA CEA
+              put the molecular weight at about 22.65 g/mol at the throat and the ratio of
+              specific heats between 1.15 and 1.22. For hand calculations I used 1.2, with a
+              rough target of Mach 3.5 at the exit.
             </p>
           </div>
         </div>
@@ -195,13 +215,16 @@
 
           <div class="prose prose--after-spec">
             <p>
-              I set the throat and exit radii to match the area ratio from NASA CEA, which I
-              ran for this engine on 8 October 2025. CEA gives an exit to throat area ratio of 15.916 and an exit Mach
-              number of 3.54. The exit radius divided by the throat radius is 3.99, so the part
-              I printed has a geometric area ratio of 15.92, matching it. As a check, the simple
-              isentropic relation with a fixed ratio of specific heats of 1.2 gives about Mach
-              3.6 for that area ratio. CEA comes out a little lower because the gas changes
-              composition as it expands. Both are close to my original Mach 3.5 target.
+              <strong>The printed part matches CEA.</strong> I ran NASA CEA for this engine on
+              8 October 2025, and it gives an exit to throat area ratio of 15.916 and an exit
+              Mach number of 3.54. My exit radius divided by my throat radius is 3.99, so the
+              part has a geometric area ratio of 15.92.
+            </p>
+            <p>
+              As a check, the simple isentropic relation with a fixed ratio of specific heats
+              of 1.2 gives about Mach 3.6 for that area ratio. CEA comes out a little lower
+              because the gas changes composition as it expands. Both are close to my original
+              Mach 3.5 target.
             </p>
             <p>
               This compares my geometry with textbook theory. It is not a simulation result or
@@ -305,10 +328,12 @@
               At first I blamed the mesh, because it was obviously coarse. Then I went back
               through the pressure and temperature settings, then the boundary conditions, then
               the mesh again. Every change gave me another test case, and I ran a lot of them
-              across one evening and the next afternoon. Eventually I added a temperature
-              limiter to stop the solver aborting outright, which kept the case alive much
-              longer. The limiter only hid the symptom. Whatever was causing it was still
-              there.
+              across one evening and the next afternoon.
+            </p>
+            <p>
+              Eventually I added a temperature limiter to stop the solver aborting outright,
+              which kept the case alive much longer. But the limiter only hid the symptom.
+              Whatever was causing it was still there.
             </p>
           </div>
 
@@ -475,21 +500,16 @@
         <div class="section__rail">
           <h2 class="section__title" id="nz-next">What I would change</h2>
         </div>
-        <div class="prose">
-          <p>
-            Mesh the nozzle, not the box. The cells need to be small where the flow does
-            something, through the throat and along the wall, and they can be much larger
-            everywhere else. That is also the only way to stay under a node limit.
-          </p>
-          <p>
-            Check that the inlet, outlet, and wall are genuinely separate patches with the
-            right condition on each, instead of assuming they are. Bring the case up gradually
-            rather than starting a 100 bar inlet from ambient. Run it transient first, so the
-            flow can establish before I ask a steady-state solver for an answer.
-          </p>
-          <p>
-            The test of whether any of that worked is simple: produce a Mach field and look
-            at it. Until I can do that, I would not call the nozzle simulated.
+        <div>
+          <ul class="points">
+            <li><strong>Mesh the nozzle, not the box.</strong> Small cells through the throat and along the wall, larger ones everywhere else. That is also the only way to stay under a node limit.</li>
+            <li><strong>Check the boundaries.</strong> Make sure the inlet, outlet, and wall are really separate patches with the right condition on each.</li>
+            <li><strong>Ramp up gradually</strong> instead of starting a 100 bar inlet from ambient.</li>
+            <li><strong>Run it transient first</strong>, so the flow can establish before a steady-state solver is asked for an answer.</li>
+          </ul>
+          <p class="group__detail">
+            The test of whether any of that worked is simple: produce a Mach field and look at
+            it. Until I can do that, I would not call the nozzle simulated.
           </p>
         </div>
       </div>
