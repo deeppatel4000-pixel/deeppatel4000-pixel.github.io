@@ -40,8 +40,10 @@
         <a class="project-header__back" href="/projects/">Projects</a>
         <h1 class="project-header__title">Bell Nozzle</h1>
         <p class="lede">
-          I sized a bell nozzle with NASA CEA, drew it in OpenSCAD, tried to simulate the flow
-          in SimFlow, and printed it in PLA. The part printed. The CFD never converged, so most
+          I sized a bell nozzle with NASA CEA, drew it in OpenSCAD, tried to simulate
+          the flow
+          in SimFlow, and printed it in PLA. The part printed. The CFD never converged,
+          so most
           of this page is about the debugging.
         </p>
         <dl class="stats">
@@ -96,12 +98,14 @@
           <div class="prose">
             <p>
               I started this project while researching the engines and nozzles used on
-              different spacecraft. I wanted to know why their shapes were different, and then
+              different spacecraft. I wanted to know why their shapes were different,
+              and then
               I wanted to try designing my own bell nozzle.
             </p>
             <p>
               I also wanted more experience with propulsion work, because it is the field I
-              want to keep learning about. And if the design turned out well enough, I hoped it
+              want to keep learning about. And if the design turned out well enough, I
+              hoped it
               would be something I could show to engineers working in the field.
             </p>
           </div>
@@ -109,19 +113,24 @@
           <h3 class="subhead">The physics that sets the shape</h3>
           <div class="prose">
             <p>
-              A bell nozzle has a converging section, a throat where the flow goes sonic, and a
-              diverging section where the gas keeps speeding up. That last part is the one that
+              A bell nozzle has a converging section, a throat where the flow goes
+              sonic, and a
+              diverging section where the gas keeps speeding up. That last part is the
+              one that
               confused me at first. While the flow is slower than sound, a narrowing passage
-              speeds it up. Once it passes Mach 1 at the throat, only a widening passage does.
+              speeds it up. Once it passes Mach 1 at the throat, only a widening passage
+              does.
             </p>
             <p>
-              The relation that matters after that is the one between area ratio and exit Mach
-              number for a given ratio of specific heats. You pick the Mach number you want at
+              From there, the area ratio sets the exit Mach number for a given ratio of
+              specific heats. You pick the Mach number you want at
               the exit, and it tells you how much bigger the exit has to be than the throat.
             </p>
             <p>
-              I sized mine around a LOX/RP-1 case: an oxidizer to fuel ratio of 2.3, a 100 bar
-              chamber at about 3615 K, expanding to 0.7 bar at roughly 3 km altitude. NASA CEA
+              I sized mine around a LOX/RP-1 case: an oxidizer to fuel ratio of 2.3, a
+              100 bar
+              chamber at about 3615 K, expanding to 0.7 bar at roughly 3 km altitude.
+              NASA CEA
               put the molecular weight at about 22.65 g/mol at the throat and the ratio of
               specific heats between 1.15 and 1.22. For hand calculations I used 1.2, with a
               rough target of Mach 3.5 at the exit.
@@ -139,7 +148,8 @@
         <div>
           <div class="prose">
             <p>
-              I built the nozzle in OpenSCAD. The whole shape comes from a six-point profile,
+              I built the nozzle in OpenSCAD. The whole shape comes from a six-point
+              profile,
               which is the exit, three points down the diverging wall, the throat, and the
               inlet. That profile gets revolved around the centerline with
               <span class="nowrap">rotate_extrude()</span>, then offset by a constant wall
@@ -148,9 +158,8 @@
             <p>
               Writing it as code rather than clicking it out in a CAD program meant I could
               move one point and see the whole contour change, and it let me hold the wall
-              thickness and the overall scale as variables. The contour points themselves are
-              typed in, so this is not a full nozzle generator. It is a profile I tuned by hand
-              until the curve looked right.
+              thickness and the overall scale as variables. I typed the contour points
+              in by hand and moved them until the curve looked right.
             </p>
           </div>
 
@@ -180,7 +189,8 @@
               </g>
             </svg>
             <figcaption>
-              Cross-section drawn straight from the six profile points in my OpenSCAD file, at
+              Cross-section drawn straight from the six profile points in my OpenSCAD
+              file, at
               the same 0.81 scale I printed at. Dimensions in millimeters.
             </figcaption>
           </figure>
@@ -216,19 +226,24 @@
           <div class="prose prose--after-spec">
             <p>
               <strong>The printed part matches CEA.</strong> I ran NASA CEA for this engine on
-              8 October 2025, and it gives an exit to throat area ratio of 15.916 and an exit
-              Mach number of 3.54. My exit radius divided by my throat radius is 3.99, so the
+              8 October 2025, and it gives an exit to throat area ratio of 15.916 and an
+              exit
+              Mach number of 3.54. My exit radius divided by my throat radius is 3.99,
+              so the
               part has a geometric area ratio of 15.92.
             </p>
             <p>
-              As a check, the simple isentropic relation with a fixed ratio of specific heats
+              As a check, the simple isentropic relation with a fixed ratio of specific
+              heats
               of 1.2 gives about Mach 3.6 for that area ratio. CEA comes out a little lower
-              because the gas changes composition as it expands. Both are close to my original
+              because the gas changes composition as it expands. Both are close to my
+              original
               Mach 3.5 target.
             </p>
             <p>
-              This compares my geometry with textbook theory. It is not a simulation result or
-              a measurement, and it does not tell me how the printed part would perform.
+              This compares my geometry with textbook theory. It is not a simulation
+              result or a measurement, and it says nothing about how the printed part
+              would perform.
             </p>
           </div>
         </div>
@@ -243,15 +258,18 @@
         <div>
           <div class="prose">
             <p>
-              For CFD, the solver needs the gas inside the nozzle, not the walls around it. So
-              I made a second OpenSCAD model of just the internal flow path and exported that as
+              For CFD, the solver needs the gas inside the nozzle, not the walls around
+              it. So
+              I made a second OpenSCAD model of just the internal flow path and exported
+              that as
               the geometry to simulate.
             </p>
             <p>
-              That went into SimFlow, which is the interface I used to set up and run the case.
+              That went into SimFlow, which is the interface I used to set up and run
+              the case.
               I used ParaView to look at the results.
-              SimFlow's free version caps a mesh at 200,000 nodes on a single core, and that
-              limit shaped everything that came after.
+              SimFlow's free version caps a mesh at 200,000 nodes on a single core, and
+              that cap set how fine my mesh could be.
             </p>
           </div>
 
@@ -319,21 +337,24 @@
           <h3 class="subhead">What I tried</h3>
           <div class="prose">
             <p>
-              The early runs did not really run. The solver would abort inside the
-              thermodynamics and report a temperature of about minus 1×10<sup>17</sup> K, which
+              The early runs barely started. The solver would abort inside the
+              thermodynamics and report a temperature of about minus 1×10<sup>17</sup>
+              K, which
               is the solver saying the energy equation produced something meaningless and it
               will not carry on. That happened within one or two iterations.
             </p>
             <p>
               At first I blamed the mesh, because it was obviously coarse. Then I went back
-              through the pressure and temperature settings, then the boundary conditions, then
-              the mesh again. Every change gave me another test case, and I ran a lot of them
+              through the pressure and temperature settings, then the boundary
+              conditions, then
+              the mesh again. Every change gave me another test case, and I ran a lot of
+              them
               across one evening and the next afternoon.
             </p>
             <p>
-              Eventually I added a temperature limiter to stop the solver aborting outright,
-              which kept the case alive much longer. But the limiter only hid the symptom.
-              Whatever was causing it was still there.
+              Eventually I added a temperature limiter. It stopped the outright aborts
+              and kept the case alive much longer, but it only hid the symptom, and
+              whatever caused it was still there.
             </p>
           </div>
 
@@ -376,7 +397,8 @@
           <div class="prose prose--after-spec">
             <p>
               Those six are the runs I happened to capture, out of a lot more. They go from
-              cases that aborted at iteration 1 or 2 to cases that lasted into the twenties, and
+              cases that aborted at iteration 1 or 2 to cases that lasted into the
+              twenties, and
               none of them reached an answer.
             </p>
           </div>
@@ -384,20 +406,25 @@
           <h3 class="subhead">What the results showed</h3>
           <div class="prose">
             <p>
-              The simulation did not produce a valid flow solution. No velocity, Mach, or pressure
+              The simulation did not produce a valid flow solution. No velocity, Mach,
+              or pressure
               field was ever written to disk. When I open the case in ParaView the only time
-              step available is zero, which is the mesh before anything was solved. I did not
+              step available is zero, which is the mesh before anything was solved. I
+              did not
               numerically confirm choking at the throat, I did not confirm supersonic
-              expansion, and I have nothing that would let me say whether the nozzle was over
+              expansion, and I have nothing that would let me say whether the nozzle was
+              over
               or under expanded.
             </p>
             <p>
               In the final run the solver reported a continuity error of order
               10<sup>49</sup>, a maximum pressure of about 10<sup>101</sup>, and a minimum
-              pressure of about minus 10<sup>99</sup>. Physically meaningless numbers like these
+              pressure of about minus 10<sup>99</sup>. Physically meaningless numbers
+              like these
               mean the case was falling apart. In the residual plot from that run, the three
               velocity residuals level off between about 0.01 and 0.05, while
-              the enthalpy residual stays pinned at 1. A converging case would show all of them
+              the enthalpy residual stays pinned at 1. A converging case would show all
+              of them
               dropping together.
             </p>
           </div>
@@ -409,16 +436,17 @@
               width="1840" height="945" loading="lazy" decoding="async"
             >
             <figcaption>
-              The 3 April run, which reached iteration 24. The pressure values in the log under
+              The 3 April run, which reached iteration 24. The pressure values in the
+              log under
               the plot show that the case had diverged.
             </figcaption>
           </figure>
 
           <div class="prose prose--after-spec">
             <p>
-              So the CFD here records a setup and a failure. It does not validate the design,
-              and the geometry check earlier on this page is the only number I can stand
-              behind.
+              The CFD records a setup and a failure, and it does not validate the
+              design. The geometry check earlier on this page is the only result I can
+              stand behind.
             </p>
           </div>
         </div>
@@ -433,16 +461,19 @@
         <div>
           <div class="prose">
             <p>
-              The printing question is which way up. Printed the obvious way, inlet down, the
-              inside of the bell is an overhang, so the slicer fills the expansion section with
+              The printing question is which way up. Printed the obvious way, inlet
+              down, the
+              inside of the bell is an overhang, so the slicer fills the expansion
+              section with
               sacrificial support. Every contact point then leaves a mark on the surface the
               gas would flow along.
             </p>
             <p>
-              Turning the part over solves it. With the exit face flat on the plate, the wall
+              Turning the part over solves it. With the exit face flat on the plate, the
+              wall
               never exceeds its own self-supporting angle, so nothing has to be built inside
-              the bell. There is still a raft under the part where it meets the bed. What the
-              orientation avoids is support material against the internal curve.
+              the bell. There is still a raft where the part meets the bed, but no
+              support touches the internal curve.
             </p>
           </div>
 
@@ -477,7 +508,7 @@
           <h3 class="subhead">The printed part</h3>
           <div class="prose">
             <p>
-              The nozzle printed successfully and I still have the finished part.
+              The nozzle printed, and I still have the part.
             </p>
           </div>
 
@@ -488,7 +519,8 @@
               width="1122" height="1402" loading="lazy" decoding="async"
             >
             <figcaption>
-              Printed at the same 0.81 scale as the cross-section, so it stands 84.48 mm tall.
+              Printed at the same 0.81 scale as the cross-section, so it stands 84.48 mm
+              tall.
             </figcaption>
           </figure>
         </div>
@@ -503,12 +535,13 @@
         <div>
           <ul class="points">
             <li><strong>Mesh the nozzle, not the box.</strong> Small cells through the throat and along the wall, larger ones everywhere else. That is also the only way to stay under a node limit.</li>
-            <li><strong>Check the boundaries.</strong> Make sure the inlet, outlet, and wall are really separate patches with the right condition on each.</li>
+            <li><strong>Check the boundaries.</strong> Make sure the inlet, outlet, and wall are separate patches with the right condition on each.</li>
             <li><strong>Ramp up gradually</strong> instead of starting a 100 bar inlet from ambient.</li>
             <li><strong>Run it transient first</strong>, so the flow can establish before a steady-state solver is asked for an answer.</li>
           </ul>
           <p class="group__detail">
-            The test of whether any of that worked is simple: produce a Mach field and look at
+            The test of whether any of that worked is simple: produce a Mach field and
+            look at
             it. Until I can do that, I would not call the nozzle simulated.
           </p>
         </div>
@@ -522,14 +555,16 @@
         </div>
         <div class="prose">
           <p>
-            The early crashes were mostly frustrating, because the error told me something was
-            wrong without telling me where. By the later runs I was much better at reading the
-            error, changing one part of the setup, and testing it again. CFD turned out to be
-            very sensitive to the mesh, the conditions, and the way the case is set up. Small
-            changes there decided whether a run lasted one iteration or twenty-four.
-          </p>
-          <p>
-            I also learned to check my own geometry against the theory.
+            The early crashes were mostly frustrating, because the error told me
+            something was
+            wrong without telling me where. By the later runs I was much better at
+            reading the
+            error, changing one part of the setup, and testing it again. CFD turned out
+            to be
+            very sensitive to the mesh, the conditions, and the way the case is set up.
+            Small
+            changes there decided whether a run lasted one iteration or twenty-four. I
+            also learned to check my own geometry against the theory before trusting it.
           </p>
           <p class="feature__links">
             <a class="link-arrow" href="../../assets/nozzle/bell-nozzle-lab-report.pdf">Read the full lab report (PDF)</a>
