@@ -40,12 +40,16 @@
         <a class="project-header__back" href="/projects/">Projects</a>
         <h1 class="project-header__title">ORBIX</h1>
         <p class="lede">
-          An aerospace engineering web app built around real aircraft and launch vehicles.
-          Drag an orbit and watch the delta-v change, plan a mission burn by burn, or
-          put three
-          aircraft side by side. The idea, the research, and the design decisions are
-          mine, and
-          I used AI coding tools to write the code.
+          An aerospace engineering web app built around real aircraft and launch
+          vehicles. Drag an orbit and watch the delta-v change, plan a mission burn by
+          burn, or put three aircraft side by side. The idea, the research, and the
+          design decisions are mine, and I used AI coding tools to write the code.
+        </p>
+        <p class="project-actions">
+          <a class="button" href="https://orbix-aerospace.vercel.app" rel="noopener">Try
+          the live app <span aria-hidden="true">↗</span></a> <a class="link-arrow"
+          href="https://github.com/deeppatel4000-pixel/orbix-aerospace"
+          rel="noopener">Source on GitHub</a>
         </p>
         <dl class="stats">
           <div>
@@ -95,18 +99,15 @@
           <div class="prose">
             <p>
               I plan to study aerospace engineering, and I wanted one place where I
-              could look
-              at real vehicles and work through the engineering behind them: lift and
-              drag, the
-              rocket equation, orbital transfers, shock waves, and entry heating. ORBIX
-              does that, and anyone can use it for free.
+              could look at real vehicles and work through the engineering behind them:
+              lift and drag, the rocket equation, orbital transfers, shock waves, and
+              entry heating. ORBIX does that, and anyone can use it for free.
             </p>
             <p>
               The home page opens on the Transfer Explorer. Drag the target orbit
-              anywhere from
-              160 km to 400,000 km and ORBIX recomputes the two burns of a Hohmann
-              transfer, the
-              total delta-v, and the coast time, then explains each burn in a sentence.
+              anywhere from 160 km to 400,000 km and ORBIX recomputes the two burns of a
+              Hohmann transfer, the total delta-v, and the coast time, then explains
+              each burn in a sentence.
             </p>
           </div>
 
@@ -137,8 +138,9 @@
             <li><strong>AI coding tools wrote the software</strong> from those instructions, first Codex and later Claude Code</li>
           </ul>
           <p class="group__detail">
-            The full project history is
-            <a href="https://github.com/deeppatel4000-pixel/orbix-aerospace" rel="noopener">public on GitHub</a>.
+            The full project history is <a
+            href="https://github.com/deeppatel4000-pixel/orbix-aerospace"
+            rel="noopener">public on GitHub</a>.
           </p>
         </div>
       </div>
@@ -152,8 +154,9 @@
         <div>
           <div class="prose">
             <p>
-              Each tool in the lab shows its equation, units, and assumptions next to the
-              result. The 13 calculators and the mission planner fall into three groups:
+              Each tool in the lab shows its equation, units, and assumptions next to
+              the result. The 13 calculators and the mission planner fall into three
+              groups:
             </p>
           </div>
 
@@ -179,23 +182,20 @@
               width="1800" height="1264" loading="lazy" decoding="async"
             >
             <figcaption>
-              Playback, with the craft partway along the arc. It moves on Kepler timing, and
-              the readout gives the time since burn 1 and its altitude and speed at that
-              moment.
+              Playback, with the craft partway along the arc. It moves on Kepler timing,
+              and the readout gives the time since burn 1 and its altitude and speed at
+              that moment.
             </figcaption>
           </figure>
 
           <div class="prose">
             <p>
               The mission planner strings those calculations together. Pick a preset
-              such as a
-              LEO satellite deployment or a lunar transfer, and it lists every burn in
-              flight
-              order with its delta-v. Steps it does not model, like the launch itself,
-              show up
-              as plain rows that say so. The presets then appear on one shared axis, so
-              a lunar
-              transfer at 4,049 m/s sits next to a 199.5 m/s orbit raise at the same scale.
+              such as a LEO satellite deployment or a lunar transfer, and it lists every
+              burn in flight order with its delta-v. Steps it does not model, like the
+              launch itself, show up as plain rows that say so. The presets then appear
+              on one shared axis, so a lunar transfer at 4,049 m/s sits next to a 199.5
+              m/s orbit raise at the same scale.
             </p>
           </div>
 
@@ -207,8 +207,8 @@
             >
             <figcaption>
               The chart also shows ISS-style resupply and a Mars transfer concept. The
-              Mars row
-              is labeled as preset allowances because ORBIX does not compute that mission.
+              Mars row is labeled as preset allowances because ORBIX does not compute
+              that mission.
             </figcaption>
           </figure>
         </div>
@@ -224,21 +224,20 @@
         <div>
           <div class="prose">
             <p>
-              The Verification page runs selected lab functions on the inputs from published
-              worked examples and prints each result beside the published value. The numbers
-              come from the same functions the lab uses, so none are typed in by hand.
+              The Verification page runs selected lab functions on the inputs from
+              published worked examples and prints each result beside the published
+              value. The numbers come from the same functions the lab uses, so none are
+              typed in by hand.
             </p>
             <p>
               <strong>26 of 36 values</strong> fall within the rounding of the published
               figure. The other 10 stay on the page with a reason for each. In the
-              Hohmann case
-              below, the source rounds each speed before subtracting and ORBIX does not, so
-              they differ by about 1 m/s.
+              Hohmann case below, the source rounds each speed before subtracting and
+              ORBIX does not, so they differ by about 1 m/s.
             </p>
             <p>
               Sources: Robert A. Braeunig's example problems, Brennen's Internet Book on
-              Fluid
-              Dynamics, NACA Report 1135, and the U.S. Standard Atmosphere, 1976.
+              Fluid Dynamics, NACA Report 1135, and the U.S. Standard Atmosphere, 1976.
             </p>
           </div>
 
@@ -249,8 +248,8 @@
               width="1680" height="1240" loading="lazy" decoding="async"
             >
             <figcaption>
-              One of the 14 verification tables. Every difference is under 0.05 percent, yet
-              two rows are marked "outside rounding," and the note under the table
+              One of the 14 verification tables. Every difference is under 0.05 percent,
+              yet two rows are marked "outside rounding," and the note under the table
               explains why.
             </figcaption>
           </figure>
@@ -266,20 +265,17 @@
         <div>
           <div class="prose">
             <p>
-              The aircraft are the F-22, F-35, F-15, B-2, and SR-71. The launch vehicles are
-              Falcon 9, Falcon Heavy, SLS, Saturn V, and Starship. Each one has a
-              profile with
-              its published specifications, and every photo has a verified license and a
-              credit.
+              The aircraft are the F-22, F-35, F-15, B-2, and SR-71. The launch vehicles
+              are Falcon 9, Falcon Heavy, SLS, Saturn V, and Starship. Each one has a
+              profile with its published specifications, and every photo has a verified
+              license and a credit.
             </p>
             <p>
-              Public sources often disagree, so ORBIX shows values in the units the source
-              used and never converts them silently. A missing value reads "Not published"
-              instead of zero, and the compare page gives no ranking and no winner. The
-              scale
-              drawings are outlines traced from public-domain government drawings and
-              sized to
-              each vehicle's recorded height or length.
+              Public sources often disagree, so ORBIX shows values in the units the
+              source used and never converts them silently. A missing value reads "Not
+              published" instead of zero, and the compare page gives no ranking and no
+              winner. The scale drawings are outlines traced from public-domain
+              government drawings and sized to each vehicle's recorded height or length.
             </p>
           </div>
 
@@ -302,8 +298,7 @@
             >
             <figcaption>
               The page comes preloaded with these three. Its comparison rules sit on the
-              left,
-              ahead of the heritage data, which starts with manufacturer and first
+              left, ahead of the heritage data, which starts with manufacturer and first
               flight date.
             </figcaption>
           </figure>
@@ -319,18 +314,16 @@
         <div>
           <div class="prose">
             <p>
-              The physics is kept separate from the pages. Each calculator is a
-              small function for one calculation, analyses combine several calculators
-              into one
-              study, and the React components only draw the results. Because of that
+              The physics is kept separate from the pages. Each calculator is a small
+              function for one calculation, analyses combine several calculators into
+              one study, and the React components only draw the results. Because of that
               split, the Verification page can call the exact functions the lab uses.
             </p>
             <p>
               Every change runs through GitHub Actions before it reaches the live site:
-              formatting, linting, type checks, 1,280 unit tests, a production build, and a
-              separate browser test suite at desktop, tablet, and phone sizes, which
-              includes
-              accessibility checks.
+              formatting, linting, type checks, 1,280 unit tests, a production build,
+              and a separate browser test suite at desktop, tablet, and phone sizes,
+              which includes accessibility checks.
             </p>
           </div>
 
@@ -341,8 +334,8 @@
               width="1440" height="1380" loading="lazy" decoding="async"
             >
             <figcaption>
-              From the build log on the ORBIX site. The arrows show which layer imports from
-              which.
+              From the build log on the ORBIX site. The arrows show which layer imports
+              from which.
             </figcaption>
           </figure>
         </div>
@@ -360,8 +353,7 @@
               Most of what I learned came from the Engineering Lab. Before any tool
               could be built, I had to know its equation, its inputs, and what the
               result means, so I had to learn how lift, drag, thrust, gravity, shock
-              waves,
-              and heating behave.
+              waves, and heating behave.
             </p>
             <p>
               Once the tools worked, I could change one input, rerun it, and watch how
@@ -372,22 +364,25 @@
 
           <h3 class="subhead">Built with</h3>
           <p class="feature__tools">
-            Next.js · React · TypeScript · Vitest · Playwright · GitHub Actions · Vercel ·
-            Codex · Claude Code
+            Next.js · React · TypeScript · Vitest · Playwright · GitHub Actions · Vercel
+            · Codex · Claude Code
           </p>
 
           <p class="feature__links">
-            <a class="link-arrow" href="https://orbix-aerospace.vercel.app" rel="noopener">Open ORBIX</a>
-            <a class="link-arrow" href="https://orbix-aerospace.vercel.app/build-log" rel="noopener">Read the build log</a>
-            <a class="link-arrow" href="https://github.com/deeppatel4000-pixel/orbix-aerospace" rel="noopener">Source on GitHub</a>
+            <a class="link-arrow" href="https://orbix-aerospace.vercel.app"
+            rel="noopener">Open ORBIX</a> <a class="link-arrow"
+            href="https://orbix-aerospace.vercel.app/build-log" rel="noopener">Read the
+            build log</a> <a class="link-arrow"
+            href="https://github.com/deeppatel4000-pixel/orbix-aerospace"
+            rel="noopener">Source on GitHub</a>
           </p>
         </div>
       </div>
     </section>
 
     <nav class="wrap project-nav" aria-label="Project">
-      <a href="/projects/">All projects</a>
-      <a href="../bell-nozzle/">Next: Bell Nozzle</a>
+      <a href="/projects/">All projects</a> <a href="../bell-nozzle/">Next: Bell
+      Nozzle</a>
     </nav>
   </main>
 
@@ -395,9 +390,9 @@
     <div class="wrap site-footer__inner">
       <p>© 2026 Deep Patel · Lowell, Massachusetts</p>
       <p>
-        <a href="mailto:deep.patel4000@gmail.com">deep.patel4000@gmail.com</a>
-        <span aria-hidden="true">·</span>
-        <a href="/assets/deep-patel-resume.pdf">Resume (PDF)</a>
+        <a href="mailto:deep.patel4000@gmail.com">deep.patel4000@gmail.com</a> <span
+        aria-hidden="true">·</span> <a href="/assets/deep-patel-resume.pdf">Resume
+        (PDF)</a>
       </p>
     </div>
   </footer>

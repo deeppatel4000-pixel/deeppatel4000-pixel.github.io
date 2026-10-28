@@ -973,6 +973,33 @@ main:focus {
   margin-top: 0;
 }
 
+/* primary call to action under a project lede, e.g. the live ORBIX app */
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4) var(--space-5);
+  margin-top: var(--space-6);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-sm);
+  background: var(--color-accent);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color var(--transition);
+}
+
+.button:hover {
+  background: var(--color-accent-hover);
+  color: #fff;
+}
+
 .project-meta {
   display: grid;
   gap: var(--space-4);
