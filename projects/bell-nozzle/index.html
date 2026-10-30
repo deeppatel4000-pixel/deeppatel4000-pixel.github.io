@@ -127,7 +127,7 @@
               the exit, and it tells you how much bigger the exit has to be than the throat.
             </p>
             <p>
-              I sized mine around a LOX/RP-1 case: an oxidizer to fuel ratio of 2.3, a
+              I sized mine around a LOX/RP-1 case: an oxidizer-to-fuel ratio of 2.3, a
               100 bar
               chamber at about 3615 K, expanding to 0.7 bar at roughly 3 km altitude.
               NASA CEA
@@ -226,7 +226,7 @@
           <div class="prose prose--after-spec">
             <p>
               <strong>The printed part matches CEA.</strong> I ran NASA CEA for this engine on
-              8 October 2025, and it gives an exit to throat area ratio of 15.916 and an
+              8 October 2025, and it gives an exit-to-throat area ratio of 15.916 and an
               exit
               Mach number of 3.54. My exit radius divided by my throat radius is 3.99,
               so the
@@ -347,8 +347,7 @@
               At first I blamed the mesh, because it was obviously coarse. Then I went back
               through the pressure and temperature settings, then the boundary
               conditions, then
-              the mesh again. Every change gave me another test case, and I ran a lot of
-              them
+              the mesh again. Every change gave me another test case, and I ran many of them
               across one evening and the next afternoon.
             </p>
             <p>
@@ -396,7 +395,7 @@
 
           <div class="prose prose--after-spec">
             <p>
-              Those six are the runs I happened to capture, out of a lot more. They go from
+              These six are the runs I happened to capture, out of many more. They go from
               cases that aborted at iteration 1 or 2 to cases that lasted into the
               twenties, and
               none of them reached an answer.
@@ -412,9 +411,7 @@
               step available is zero, which is the mesh before anything was solved. I
               did not
               numerically confirm choking at the throat, I did not confirm supersonic
-              expansion, and I have nothing that would let me say whether the nozzle was
-              over
-              or under expanded.
+              expansion, and I have nothing that would let me say whether the nozzle was overexpanded or underexpanded.
             </p>
             <p>
               In the final run the solver reported a continuity error of order
@@ -461,8 +458,7 @@
         <div>
           <div class="prose">
             <p>
-              The printing question is which way up. Printed the obvious way, inlet
-              down, the
+              The main printing question was orientation. If the part is printed the obvious way, inlet down, the
               inside of the bell is an overhang, so the slicer fills the expansion
               section with
               sacrificial support. Every contact point then leaves a mark on the surface the
@@ -534,9 +530,9 @@
         </div>
         <div>
           <ul class="points">
-            <li><strong>Mesh the nozzle, not the box.</strong> Small cells through the throat and along the wall, larger ones everywhere else. That is also the only way to stay under a node limit.</li>
+            <li><strong>Mesh the nozzle, not the box.</strong> Use small cells through the throat and along the wall, and larger ones everywhere else. That is also the only way to stay under a node limit.</li>
             <li><strong>Check the boundaries.</strong> Make sure the inlet, outlet, and wall are separate patches with the right condition on each.</li>
-            <li><strong>Ramp up gradually</strong> instead of starting a 100 bar inlet from ambient.</li>
+            <li><strong>Ramp up gradually.</strong> Raise the inlet pressure in steps instead of jumping from ambient to 100 bar.</li>
             <li><strong>Run it transient first</strong>, so the flow can establish before a steady-state solver is asked for an answer.</li>
           </ul>
           <p class="group__detail">
