@@ -75,7 +75,7 @@
           </div>
           <div>
             <dt>Tools</dt>
-            <dd>OpenSCAD, SimFlow, ParaView, Cura</dd>
+            <dd>OpenSCAD, SimFlow, ParaView, Wiibuilder</dd>
           </div>
           <div>
             <dt>Outcome</dt>
@@ -158,8 +158,11 @@
             <p>
               Writing it as code rather than clicking it out in a CAD program meant I could
               move one point and see the whole contour change, and it let me hold the wall
-              thickness and the overall scale as variables. I typed the contour points
-              in by hand and moved them until the curve looked right.
+              thickness and the overall scale as variables. An AI tool wrote the first
+              drafts of my OpenSCAD files, but they did not work well, so I edited them
+              myself. I moved the contour points until the curve looked right, and I fixed a
+              <span class="nowrap">rotate_extrude()</span> error by repositioning the profile
+              so every point sat on the positive side of the axis.
             </p>
           </div>
 
